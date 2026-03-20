@@ -1,9 +1,13 @@
 # Changelog
 
 ## [Unreleased]
+
+## [1.2.0] - 2026-03-19
 - Your preferred view mode (editor, preview, or side-by-side) is now remembered across sessions
 - Editor and preview scroll together so you always see what you're editing
 - Dark mode app icon no longer shows white corners
+- Adjust font size with Cmd+ and Cmd- keyboard shortcuts
+- Automatic update support via Sparkle
 
 ## [1.1.2] - 2026-03-18
 - Fixed an issue that prevented auto-updates from installing correctly
