@@ -1,18 +1,24 @@
 import SwiftUI
+#if canImport(Sparkle)
 import Sparkle
+#endif
 
 @main
 struct ClearlyApp: App {
     @AppStorage("themePreference") private var themePreference = "system"
     private let recentMenuHelper = RecentMenuHelper()
+    #if canImport(Sparkle)
     private let updaterController: SPUStandardUpdaterController
+    #endif
 
     init() {
+        #if canImport(Sparkle)
         updaterController = SPUStandardUpdaterController(
             startingUpdater: true,
             updaterDelegate: nil,
             userDriverDelegate: nil
         )
+        #endif
     }
 
     var body: some Scene {
@@ -22,9 +28,11 @@ struct ClearlyApp: App {
         .windowToolbarStyle(.unified(showsTitle: true))
         .defaultSize(width: 720, height: 900)
         .commands {
+            #if canImport(Sparkle)
             CommandGroup(after: .appInfo) {
                 CheckForUpdatesView(updater: updaterController.updater)
             }
+            #endif
             CommandGroup(after: .importExport) {
                 ExportPDFCommand()
             }
@@ -126,7 +134,11 @@ struct ClearlyApp: App {
         }
 
         Settings {
+            #if canImport(Sparkle)
             SettingsView(updater: updaterController.updater)
+            #else
+            SettingsView()
+            #endif
         }
     }
 }
@@ -172,6 +184,7 @@ struct FontSizeCommands: View {
 
 // MARK: - Sparkle Check for Updates menu item
 
+#if canImport(Sparkle)
 struct CheckForUpdatesView: View {
     @ObservedObject private var checkForUpdatesViewModel: CheckForUpdatesViewModel
     let updater: SPUUpdater
@@ -188,6 +201,7 @@ struct CheckForUpdatesView: View {
         .disabled(!checkForUpdatesViewModel.canCheckForUpdates)
     }
 }
+#endif
 
 // MARK: - Export / Print Commands
 
@@ -221,6 +235,7 @@ struct PrintCommand: View {
     }
 }
 
+#if canImport(Sparkle)
 final class CheckForUpdatesViewModel: ObservableObject {
     @Published var canCheckForUpdates = false
     private var observation: Any?
@@ -233,3 +248,4 @@ final class CheckForUpdatesViewModel: ObservableObject {
         }
     }
 }
+#endif

@@ -88,7 +88,26 @@ This handles: xcodegen → archive → export → DMG → notarize → staple �
 
 Let it run to completion. If it fails, report the error output to the user and stop. Do NOT retry automatically.
 
-### Step 6: Push and report
+### Step 6: App Store release (optional)
+
+After the Sparkle release succeeds, ask the user if they also want to submit to the App Store. Use `mcp__conductor__AskUserQuestion`:
+- question: "Sparkle release complete. Also submit v<VERSION> to the App Store?"
+- header: "App Store"
+- multiSelect: false
+- options:
+  - "Yes, submit to App Store"
+  - "No, skip App Store"
+
+If yes, run:
+```bash
+./scripts/release-appstore.sh <VERSION>
+```
+
+This handles: strip Sparkle from project → archive → export → upload to App Store Connect.
+
+If it fails, report the error and stop. Do NOT retry automatically.
+
+### Step 7: Push and report
 
 Ensure all commits are on the remote:
 ```bash
@@ -98,6 +117,7 @@ git push
 Tell the user:
 - The version that was released
 - Link: `https://github.com/Shpigford/clearly/releases/tag/v<VERSION>`
+- Whether the App Store submission was included
 
 ## Important Rules
 

@@ -19,7 +19,7 @@ Open in Xcode: `open Clearly.xcodeproj` (gitignored, so regenerate with xcodegen
 
 - Deployment target: macOS 14.0
 - Swift 5.9, Xcode 16+
-- Dependencies: `cmark-gfm` (GFM markdown → HTML), `Sparkle` (auto-updates) via Swift Package Manager
+- Dependencies: `cmark-gfm` (GFM markdown → HTML), `Sparkle` (auto-updates, direct distribution only) via Swift Package Manager
 
 ## Architecture
 
@@ -43,14 +43,29 @@ Open in Xcode: `open Clearly.xcodeproj` (gitignored, so regenerate with xcodegen
 
 **Key pattern**: The editor uses AppKit (`NSTextView`) bridged to SwiftUI via `NSViewRepresentable`, not SwiftUI's `TextEditor`. This is intentional — it provides undo support, find panel, and `NSTextStorageDelegate`-based syntax highlighting.
 
-## Sparkle & Sandboxing
+## Dual Distribution: Sparkle + App Store
 
-The app is sandboxed and uses Sparkle 2.x for auto-updates. This combination has a critical gotcha:
+The app ships through two channels from the same codebase:
 
-- **Xcode strips `temporary-exception` entitlements during `xcodebuild archive` + export.** The mach-lookup entitlements in `Clearly.entitlements` (needed for Sparkle's XPC installer service) will be present in local builds but silently removed from archived/exported builds. The release script (`scripts/release.sh`) works around this by re-signing the exported app with the resolved entitlements and verifying they're present before creating the DMG.
+1. **Direct (Sparkle)** — `scripts/release.sh` → DMG + notarize + GitHub Release + Sparkle appcast
+2. **App Store** — `scripts/release-appstore.sh` → archive without Sparkle + upload to App Store Connect
+
+**Conditional compilation**: All Sparkle code is wrapped in `#if canImport(Sparkle)`. The App Store build uses a modified `project.yml` (generated at build time by the release script) that removes the Sparkle package, so `canImport(Sparkle)` is `false` and all update-related code compiles out.
+
+**Two entitlements files**:
+- `Clearly.entitlements` — for direct distribution. Includes `temporary-exception` entries for Sparkle's mach-lookup XPC services and home-relative-path read access for local images.
+- `Clearly-AppStore.entitlements` — for App Store. No temporary exceptions (App Store hard-rejects them). Local images outside the document's directory won't render in preview.
+
+### Sparkle + Sandboxing Gotchas
+
+- **Xcode strips `temporary-exception` entitlements during `xcodebuild archive` + export.** The release script (`scripts/release.sh`) works around this by re-signing the exported app with the resolved entitlements and verifying they're present before creating the DMG.
 - If you ever change entitlements, verify them on the **exported** app (`codesign -d --entitlements :- build/export/Clearly.app`), not just the local build.
 - `SUEnableInstallerLauncherService` in Info.plist must stay `YES` — without it, Sparkle can't launch the installer in a sandboxed app.
 - Do NOT copy Sparkle's XPC services to `Contents/XPCServices/` — that's the old Sparkle 1.x approach. Sparkle 2.x bundles them inside the framework.
+
+### Adding Sparkle references
+
+When adding new Sparkle-dependent code, always wrap it in `#if canImport(Sparkle)`. The App Store build must compile cleanly without the Sparkle module.
 
 ## Conventions
 

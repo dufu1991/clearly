@@ -1,8 +1,12 @@
 import SwiftUI
+#if canImport(Sparkle)
 import Sparkle
+#endif
 
 struct SettingsView: View {
+    #if canImport(Sparkle)
     let updater: SPUUpdater
+    #endif
     @AppStorage("editorFontSize") private var fontSize: Double = 16
     @AppStorage("themePreference") private var themePreference = "system"
 
@@ -61,9 +65,11 @@ struct SettingsView: View {
                 .foregroundStyle(.secondary)
 
             HStack(spacing: 16) {
+                #if canImport(Sparkle)
                 Button("Check for Updates") {
                     updater.checkForUpdates()
                 }
+                #endif
 
                 Button("Website") {
                     NSWorkspace.shared.open(URL(string: "https://clearly.md")!)
