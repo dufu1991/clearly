@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.7.2</title>
+      <sparkle:version>1.7.2</sparkle:version>
+      <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Thu, 26 Mar 2026 10:02:43 +0000</pubDate>
+      <description><![CDATA[<ul><li>Diagnostic logs now survive force-quit and include previous session entries</li><li>Faster document opening with fewer redundant highlighting passes</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.7.2/Clearly.dmg"
+        sparkle:edSignature="UgtlGE43im8VUl962z7dJfGFrs4Pkh/jnFF9ESC3UCcZ9eAOFVSzWEB9yTD/ELQ//PebpE9qGcaWHD/7WjqjDg=="
+        length="6475738"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.7.1</title>
       <sparkle:version>1.7.1</sparkle:version>
       <sparkle:shortVersionString>1.7.1</sparkle:shortVersionString>
