@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.7.3</title>
+      <sparkle:version>1.7.3</sparkle:version>
+      <sparkle:shortVersionString>1.7.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Fri, 27 Mar 2026 00:17:08 +0000</pubDate>
+      <description><![CDATA[<ul><li>Opening multiple documents at once no longer causes the app to hang</li><li>Appearance setting correctly applies your chosen light or dark mode</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.7.3/Clearly.dmg"
+        sparkle:edSignature="TFCitnORtrKDeJL2qTF0qcNiCqvAxw7PLI/nu7SeaORZF3qxBHVyP2EjyW/JDu9D6VFetdIxokaGoKtZIsSgAQ=="
+        length="6477858"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.7.2</title>
       <sparkle:version>1.7.2</sparkle:version>
       <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
