@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.9.0</title>
+      <sparkle:version>1.9.0</sparkle:version>
+      <sparkle:shortVersionString>1.9.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Mon, 30 Mar 2026 14:35:40 +0000</pubDate>
+      <description><![CDATA[<ul><li>Scratchpad: a menubar app with a global hotkey for capturing quick notes without opening a full document</li><li>Inline Find bar replaces the broken system Find panel for searching within documents</li><li>Window size and position are remembered per document</li><li>Pasting rich text no longer mangles your markdown</li><li>Opening multiple documents no longer hangs when scroll sync is active</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.9.0/Clearly.dmg"
+        sparkle:edSignature="DfImx7zdauDIl+iqW2n1JUNokBp64+LIw0gdKt9l+L+N+MjMjZxCcsJSjR8fNFPAODUIRHuhz4xnNEsMWYDdDg=="
+        length="6799752"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.8.0</title>
       <sparkle:version>1.8.0</sparkle:version>
       <sparkle:shortVersionString>1.8.0</sparkle:shortVersionString>
