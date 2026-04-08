@@ -3,6 +3,20 @@
   <channel>
     <title>Clearly</title>
     <item>
+      <title>Version 1.13.0</title>
+      <sparkle:version>1.13.0</sparkle:version>
+      <sparkle:shortVersionString>1.13.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <pubDate>Wed, 08 Apr 2026 22:37:02 +0000</pubDate>
+      <description><![CDATA[<ul><li>Create new untitled documents without saving them first</li><li>Bold and bold-italic text now renders visually in the editor instead of just showing markers</li><li>Pick custom icons for folders in the sidebar</li><li>Compact file explorer rows and refined sidebar layout for easier scanning</li></ul>]]></description>
+      <enclosure
+        url="https://github.com/Shpigford/clearly/releases/download/v1.13.0/Clearly.dmg"
+        sparkle:edSignature="aPIbp3tcFogL4KBRKC7SVnSbc1v/gKKw1k9tJwE+mF7EP1f4XJBlPOwWdPEYMCkWwFNu1jUO5KZkvSNB/aglAA=="
+        length="7086133"
+        type="application/octet-stream"
+      />
+    </item>
+    <item>
       <title>Version 1.12.0</title>
       <sparkle:version>1.12.0</sparkle:version>
       <sparkle:shortVersionString>1.12.0</sparkle:shortVersionString>
