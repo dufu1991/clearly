@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Clearly Markdown" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Clearly Markdown">
+    <link rel="manifest" href="/site.webmanifest">
     <title>Privacy Policy — Clearly Markdown</title>
+    <meta id="meta-description" name="description" content="Privacy policy for Clearly Markdown. Clearly Markdown does not collect, store, or transmit your data.">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -62,38 +63,358 @@
             font-size: 0.85em;
         }
 
+        footer p {
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
         footer a { color: #666; }
+
+        .language-switcher {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .language-switcher label {
+            color: #666;
+        }
+
+        .language-switcher select {
+            min-width: 180px;
+            padding: 10px 14px;
+            border: 1px solid #222;
+            border-radius: 10px;
+            background: #141414;
+            color: #e0e0e0;
+            font: inherit;
+        }
+
+        @media (max-width: 500px) {
+            .container { padding: 48px 20px 40px; }
+            .language-switcher { flex-direction: column; align-items: flex-start; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <p class="updated">Last updated: March 16, 2026</p>
+        <h1 id="page-title">Privacy Policy</h1>
+        <p id="updated" class="updated">Last updated: March 16, 2026</p>
 
-        <h2>The short version</h2>
-        <p>Clearly Markdown does not collect, store, or transmit any of your data. Your files stay on your Mac.</p>
-
-        <h2>Data Collection</h2>
-        <p>Clearly Markdown collects no personal information, usage data, analytics, or telemetry of any kind. The app operates entirely offline and locally on your device.</p>
-
-        <h2>Files</h2>
-        <p>All documents you create or edit are stored locally on your Mac. Clearly Markdown only accesses files you explicitly open. No files are uploaded, synced, or shared with any server.</p>
-
-        <h2>Third-Party Services</h2>
-        <p>Clearly Markdown does not integrate with any third-party services, analytics platforms, or advertising networks.</p>
-
-        <h2>Network Access</h2>
-        <p>The app includes a network entitlement solely for rendering web content in the preview pane (via WKWebView). No data is sent to external servers.</p>
-
-        <h2>Changes</h2>
-        <p>If this policy changes, we will update this page. Given that there is nothing to collect, we don't expect it to.</p>
-
-        <h2>Contact</h2>
-        <p>Questions? Reach out at <a href="mailto:hello@clearly.md">hello@clearly.md</a>.</p>
+        <div id="sections"></div>
 
         <footer>
-            <p><a href="/">Clearly Markdown</a> &middot; &copy; 2026 Sabotage Media, LLC</p>
+            <p id="footer-links"></p>
+            <div class="language-switcher">
+                <label id="language-label" for="language-select">Language</label>
+                <select id="language-select" aria-label="Language"></select>
+            </div>
         </footer>
     </div>
+
+    <script>
+        const STORAGE_KEY = "clearly-site-language";
+        const LAST_UPDATED = "March 16, 2026";
+        const SUPPORTED_LANGUAGES = [
+            ["en", "English"],
+            ["zh-Hans", "简体中文"],
+            ["zh-Hant", "繁體中文"],
+            ["ja", "日本語"],
+            ["ko", "한국어"],
+            ["es", "Español"],
+            ["ru", "Русский"],
+            ["fr", "Français"],
+            ["de", "Deutsch"],
+            ["it", "Italiano"]
+        ];
+        const HTML_LANG = {
+            en: "en",
+            "zh-Hans": "zh-CN",
+            "zh-Hant": "zh-TW",
+            ja: "ja",
+            ko: "ko",
+            es: "es",
+            ru: "ru",
+            fr: "fr",
+            de: "de",
+            it: "it"
+        };
+        const TRANSLATIONS = {
+            en: {
+                metaTitle: "Privacy Policy — Clearly Markdown",
+                metaDescription: "Privacy policy for Clearly Markdown. Clearly Markdown does not collect, store, or transmit your data.",
+                title: "Privacy Policy",
+                updated: `Last updated: ${LAST_UPDATED}`,
+                sections: [
+                    ["The short version", "Clearly Markdown does not collect, store, or transmit any of your data. Your files stay on your Mac."],
+                    ["Data Collection", "Clearly Markdown collects no personal information, usage data, analytics, or telemetry of any kind. The app operates entirely offline and locally on your device."],
+                    ["Files", "All documents you create or edit are stored locally on your Mac. Clearly Markdown only accesses files you explicitly open. No files are uploaded, synced, or shared with any server."],
+                    ["Third-Party Services", "Clearly Markdown does not integrate with any third-party services, analytics platforms, or advertising networks."],
+                    ["Network Access", "The app includes a network entitlement solely for rendering web content in the preview pane via WKWebView. No data is sent to external servers."],
+                    ["Changes", "If this policy changes, we will update this page. Given that there is nothing to collect, we do not expect it to."],
+                    ["Contact", "Questions? Reach out at <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "Language"
+                }
+            },
+            "zh-Hans": {
+                metaTitle: "隐私政策 — Clearly Markdown",
+                metaDescription: "Clearly Markdown 的隐私政策。Clearly Markdown 不会收集、存储或传输你的数据。",
+                title: "隐私政策",
+                updated: "最后更新：2026 年 3 月 16 日",
+                sections: [
+                    ["简短说明", "Clearly Markdown 不会收集、存储或传输你的任何数据。你的文件始终保留在你的 Mac 上。"],
+                    ["数据收集", "Clearly Markdown 不会收集任何个人信息、使用数据、分析数据或任何形式的遥测信息。应用完全离线运行，所有处理都在你的设备本地完成。"],
+                    ["文件", "你创建或编辑的所有文档都会保存在你的 Mac 本地。Clearly Markdown 只会访问你明确打开的文件。不会有任何文件被上传、同步或分享给任何服务器。"],
+                    ["第三方服务", "Clearly Markdown 不会集成任何第三方服务、分析平台或广告网络。"],
+                    ["网络访问", "应用包含网络权限，仅用于通过 WKWebView 在预览面板中渲染网页内容。不会有任何数据发送到外部服务器。"],
+                    ["变更", "如果这份政策发生变化，我们会更新此页面。考虑到本应用没有任何数据可收集，我们预计这种情况不会发生。"],
+                    ["联系", "如果你有问题，请发送邮件到 <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>。"]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "语言"
+                }
+            },
+            "zh-Hant": {
+                metaTitle: "隱私政策 — Clearly Markdown",
+                metaDescription: "Clearly Markdown 的隱私政策。Clearly Markdown 不會收集、儲存或傳輸你的資料。",
+                title: "隱私政策",
+                updated: "最後更新：2026 年 3 月 16 日",
+                sections: [
+                    ["簡短說明", "Clearly Markdown 不會收集、儲存或傳輸你的任何資料。你的檔案始終保留在你的 Mac 上。"],
+                    ["資料收集", "Clearly Markdown 不會收集任何個人資訊、使用資料、分析資料或任何形式的遙測資訊。應用程式完全離線運作，所有處理都在你的裝置本地完成。"],
+                    ["檔案", "你建立或編輯的所有文件都會保存在你的 Mac 本地。Clearly Markdown 只會存取你明確開啟的檔案。任何檔案都不會被上傳、同步或分享給任何伺服器。"],
+                    ["第三方服務", "Clearly Markdown 不會整合任何第三方服務、分析平台或廣告網路。"],
+                    ["網路存取", "應用程式包含網路權限，僅用於透過 WKWebView 在預覽面板中渲染網頁內容。不會有任何資料傳送到外部伺服器。"],
+                    ["變更", "如果這份政策發生變更，我們會更新此頁面。考量到本應用程式沒有任何資料可收集，我們預期這種情況不會發生。"],
+                    ["聯絡", "如果你有問題，請寄信到 <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>。"]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "語言"
+                }
+            },
+            ja: {
+                metaTitle: "プライバシーポリシー — Clearly Markdown",
+                metaDescription: "Clearly Markdown のプライバシーポリシー。Clearly Markdown はあなたのデータを収集、保存、送信しません。",
+                title: "プライバシーポリシー",
+                updated: "最終更新日：2026 年 3 月 16 日",
+                sections: [
+                    ["要点", "Clearly Markdown はあなたのデータを一切収集、保存、送信しません。ファイルはあなたの Mac にのみ保存されます。"],
+                    ["データ収集", "Clearly Markdown は個人情報、利用データ、分析データ、テレメトリを一切収集しません。アプリは完全にオフラインで動作し、すべての処理はデバイス上で行われます。"],
+                    ["ファイル", "作成または編集したすべての文書は Mac にローカル保存されます。Clearly Markdown がアクセスするのは、あなたが明示的に開いたファイルだけです。ファイルがサーバーへアップロード、同期、共有されることはありません。"],
+                    ["サードパーティサービス", "Clearly Markdown はサードパーティサービス、分析プラットフォーム、広告ネットワークと連携しません。"],
+                    ["ネットワークアクセス", "アプリには、WKWebView を通じてプレビューペイン内で Web コンテンツを描画するためだけにネットワーク権限が含まれています。外部サーバーへデータが送信されることはありません。"],
+                    ["変更", "このポリシーに変更がある場合は、このページを更新します。そもそも収集するデータがないため、その可能性は低いと考えています。"],
+                    ["連絡先", "ご質問がある場合は、<a href=\"mailto:hello@clearly.md\">hello@clearly.md</a> までご連絡ください。"]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "言語"
+                }
+            },
+            ko: {
+                metaTitle: "개인정보 처리방침 — Clearly Markdown",
+                metaDescription: "Clearly Markdown 의 개인정보 처리방침입니다. Clearly Markdown 는 사용자의 데이터를 수집, 저장, 전송하지 않습니다.",
+                title: "개인정보 처리방침",
+                updated: "최종 업데이트: 2026 년 3 월 16 일",
+                sections: [
+                    ["짧은 요약", "Clearly Markdown 는 사용자의 데이터를 전혀 수집, 저장, 전송하지 않습니다. 파일은 사용자의 Mac 안에만 남아 있습니다."],
+                    ["데이터 수집", "Clearly Markdown 는 개인 정보, 사용 데이터, 분석 데이터, 텔레메트리 등 어떤 정보도 수집하지 않습니다. 앱은 완전히 오프라인으로 동작하며 모든 처리는 기기 내부에서 이루어집니다."],
+                    ["파일", "사용자가 생성하거나 편집하는 모든 문서는 Mac 로컬에 저장됩니다. Clearly Markdown 는 사용자가 명시적으로 연 파일에만 접근합니다. 어떤 파일도 서버로 업로드되거나 동기화되거나 공유되지 않습니다."],
+                    ["제3자 서비스", "Clearly Markdown 는 어떠한 제3자 서비스, 분석 플랫폼, 광고 네트워크와도 통합되지 않습니다."],
+                    ["네트워크 접근", "앱에는 WKWebView 를 통해 미리 보기 패널 안에서 웹 콘텐츠를 렌더링하기 위한 네트워크 권한만 포함되어 있습니다. 외부 서버로 전송되는 데이터는 없습니다."],
+                    ["변경 사항", "이 정책이 변경되면 이 페이지를 업데이트합니다. 수집할 데이터 자체가 없기 때문에 실제로 변경될 가능성은 낮습니다."],
+                    ["문의", "문의 사항이 있다면 <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a> 로 연락해 주세요."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "언어"
+                }
+            },
+            es: {
+                metaTitle: "Política de privacidad — Clearly Markdown",
+                metaDescription: "Política de privacidad de Clearly Markdown. Clearly Markdown no recopila, almacena ni transmite tus datos.",
+                title: "Política de privacidad",
+                updated: "Última actualización: 16 de marzo de 2026",
+                sections: [
+                    ["La versión corta", "Clearly Markdown no recopila, almacena ni transmite ninguno de tus datos. Tus archivos se quedan en tu Mac."],
+                    ["Recopilación de datos", "Clearly Markdown no recopila información personal, datos de uso, analíticas ni telemetría de ningún tipo. La app funciona totalmente sin conexión y de forma local en tu dispositivo."],
+                    ["Archivos", "Todos los documentos que creas o editas se almacenan localmente en tu Mac. Clearly Markdown solo accede a los archivos que abres de forma explícita. Ningún archivo se sube, sincroniza o comparte con ningún servidor."],
+                    ["Servicios de terceros", "Clearly Markdown no se integra con servicios de terceros, plataformas de analítica ni redes publicitarias."],
+                    ["Acceso a la red", "La app incluye permiso de red únicamente para renderizar contenido web en el panel de vista previa mediante WKWebView. No se envían datos a servidores externos."],
+                    ["Cambios", "Si esta política cambia, actualizaremos esta página. Dado que no hay nada que recopilar, no esperamos que ocurra."],
+                    ["Contacto", "¿Preguntas? Escríbenos a <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "Idioma"
+                }
+            },
+            ru: {
+                metaTitle: "Политика конфиденциальности — Clearly Markdown",
+                metaDescription: "Политика конфиденциальности Clearly Markdown. Clearly Markdown не собирает, не хранит и не передаёт ваши данные.",
+                title: "Политика конфиденциальности",
+                updated: "Последнее обновление: 16 марта 2026 года",
+                sections: [
+                    ["Кратко", "Clearly Markdown не собирает, не хранит и не передаёт никакие ваши данные. Ваши файлы остаются на вашем Mac."],
+                    ["Сбор данных", "Clearly Markdown не собирает личную информацию, данные об использовании, аналитику или телеметрию любого рода. Приложение работает полностью офлайн и локально на вашем устройстве."],
+                    ["Файлы", "Все документы, которые вы создаёте или редактируете, хранятся локально на вашем Mac. Clearly Markdown получает доступ только к тем файлам, которые вы явно открываете. Никакие файлы не загружаются, не синхронизируются и не передаются на какой-либо сервер."],
+                    ["Сторонние сервисы", "Clearly Markdown не интегрируется со сторонними сервисами, платформами аналитики или рекламными сетями."],
+                    ["Сетевой доступ", "Приложение содержит сетевое разрешение исключительно для отображения веб-контента в панели предпросмотра через WKWebView. Данные на внешние серверы не отправляются."],
+                    ["Изменения", "Если эта политика изменится, мы обновим эту страницу. Поскольку нам нечего собирать, мы не ожидаем, что это произойдёт."],
+                    ["Контакт", "Есть вопросы? Напишите на <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "Язык"
+                }
+            },
+            fr: {
+                metaTitle: "Politique de confidentialité — Clearly Markdown",
+                metaDescription: "Politique de confidentialité de Clearly Markdown. Clearly Markdown ne collecte, ne stocke ni ne transmet vos données.",
+                title: "Politique de confidentialité",
+                updated: "Dernière mise à jour : 16 mars 2026",
+                sections: [
+                    ["La version courte", "Clearly Markdown ne collecte, ne stocke ni ne transmet aucune de vos données. Vos fichiers restent sur votre Mac."],
+                    ["Collecte de données", "Clearly Markdown ne collecte aucune information personnelle, donnée d’usage, analytique ou télémétrie. L’application fonctionne entièrement hors ligne et localement sur votre appareil."],
+                    ["Fichiers", "Tous les documents que vous créez ou modifiez sont stockés localement sur votre Mac. Clearly Markdown n’accède qu’aux fichiers que vous ouvrez explicitement. Aucun fichier n’est téléversé, synchronisé ou partagé avec un serveur."],
+                    ["Services tiers", "Clearly Markdown ne s’intègre à aucun service tiers, plateforme d’analytique ou réseau publicitaire."],
+                    ["Accès réseau", "L’application inclut une autorisation réseau uniquement pour afficher du contenu web dans le panneau de prévisualisation via WKWebView. Aucune donnée n’est envoyée à des serveurs externes."],
+                    ["Modifications", "Si cette politique change, nous mettrons à jour cette page. Comme il n’y a rien à collecter, nous ne pensons pas que cela arrivera."],
+                    ["Contact", "Des questions ? Écrivez à <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "Langue"
+                }
+            },
+            de: {
+                metaTitle: "Datenschutzrichtlinie — Clearly Markdown",
+                metaDescription: "Datenschutzrichtlinie von Clearly Markdown. Clearly Markdown sammelt, speichert oder überträgt keine deiner Daten.",
+                title: "Datenschutzrichtlinie",
+                updated: "Zuletzt aktualisiert: 16. März 2026",
+                sections: [
+                    ["Die Kurzfassung", "Clearly Markdown sammelt, speichert oder überträgt keine deiner Daten. Deine Dateien bleiben auf deinem Mac."],
+                    ["Datenerfassung", "Clearly Markdown sammelt keine persönlichen Informationen, Nutzungsdaten, Analysen oder Telemetriedaten irgendeiner Art. Die App arbeitet vollständig offline und lokal auf deinem Gerät."],
+                    ["Dateien", "Alle Dokumente, die du erstellst oder bearbeitest, werden lokal auf deinem Mac gespeichert. Clearly Markdown greift nur auf Dateien zu, die du ausdrücklich öffnest. Es werden keine Dateien auf Server hochgeladen, synchronisiert oder geteilt."],
+                    ["Drittanbieter Dienste", "Clearly Markdown integriert keine Drittanbieter Dienste, Analyseplattformen oder Werbenetzwerke."],
+                    ["Netzwerkzugriff", "Die App enthält eine Netzwerkberechtigung ausschließlich zum Rendern von Webinhalten im Vorschaubereich über WKWebView. Es werden keine Daten an externe Server gesendet."],
+                    ["Änderungen", "Wenn sich diese Richtlinie ändert, aktualisieren wir diese Seite. Da es nichts zu sammeln gibt, erwarten wir das allerdings nicht."],
+                    ["Kontakt", "Fragen? Schreib an <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "Sprache"
+                }
+            },
+            it: {
+                metaTitle: "Informativa sulla privacy — Clearly Markdown",
+                metaDescription: "Informativa sulla privacy di Clearly Markdown. Clearly Markdown non raccoglie, non archivia e non trasmette i tuoi dati.",
+                title: "Informativa sulla privacy",
+                updated: "Ultimo aggiornamento: 16 marzo 2026",
+                sections: [
+                    ["La versione breve", "Clearly Markdown non raccoglie, non archivia e non trasmette alcuno dei tuoi dati. I tuoi file restano sul tuo Mac."],
+                    ["Raccolta dati", "Clearly Markdown non raccoglie informazioni personali, dati di utilizzo, analitiche o telemetria di alcun tipo. L’app funziona interamente offline e localmente sul tuo dispositivo."],
+                    ["File", "Tutti i documenti che crei o modifichi vengono salvati localmente sul tuo Mac. Clearly Markdown accede solo ai file che apri esplicitamente. Nessun file viene caricato, sincronizzato o condiviso con alcun server."],
+                    ["Servizi di terze parti", "Clearly Markdown non si integra con servizi di terze parti, piattaforme di analisi o reti pubblicitarie."],
+                    ["Accesso alla rete", "L’app include un’autorizzazione di rete esclusivamente per renderizzare contenuti web nel pannello di anteprima tramite WKWebView. Nessun dato viene inviato a server esterni."],
+                    ["Modifiche", "Se questa informativa cambierà, aggiorneremo questa pagina. Dato che non c’è nulla da raccogliere, non ci aspettiamo che accada."],
+                    ["Contatti", "Hai domande? Scrivi a <a href=\"mailto:hello@clearly.md\">hello@clearly.md</a>."]
+                ],
+                footer: {
+                    home: "Clearly Markdown",
+                    language: "Lingua"
+                }
+            }
+        };
+
+        function normalizeLanguage(input) {
+            if (!input) return null;
+            const value = input.toLowerCase();
+
+            if (value.startsWith("zh")) {
+                if (value.includes("hant") || value.includes("tw") || value.includes("hk") || value.includes("mo")) {
+                    return "zh-Hant";
+                }
+                return "zh-Hans";
+            }
+
+            if (value.startsWith("ja")) return "ja";
+            if (value.startsWith("ko")) return "ko";
+            if (value.startsWith("es")) return "es";
+            if (value.startsWith("ru")) return "ru";
+            if (value.startsWith("fr")) return "fr";
+            if (value.startsWith("de")) return "de";
+            if (value.startsWith("it")) return "it";
+            if (value.startsWith("en")) return "en";
+
+            return null;
+        }
+
+        function getInitialLanguage() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved && TRANSLATIONS[saved]) return saved;
+
+            const browserLanguages = Array.isArray(navigator.languages) && navigator.languages.length > 0
+                ? navigator.languages
+                : [navigator.language];
+
+            for (const language of browserLanguages) {
+                const normalized = normalizeLanguage(language);
+                if (normalized && TRANSLATIONS[normalized]) return normalized;
+            }
+
+            return "en";
+        }
+
+        function renderSections(sections) {
+            const container = document.getElementById("sections");
+            container.innerHTML = sections.map(([title, paragraph]) => `
+                <section>
+                    <h2>${title}</h2>
+                    <p>${paragraph}</p>
+                </section>
+            `).join("");
+        }
+
+        function setLanguage(language, persist = true) {
+            const copy = TRANSLATIONS[language] || TRANSLATIONS.en;
+
+            document.documentElement.lang = HTML_LANG[language] || "en";
+            document.title = copy.metaTitle;
+            document.getElementById("meta-description").setAttribute("content", copy.metaDescription);
+            document.getElementById("page-title").textContent = copy.title;
+            document.getElementById("updated").textContent = copy.updated;
+            document.getElementById("language-label").textContent = copy.footer.language;
+            document.getElementById("language-select").setAttribute("aria-label", copy.footer.language);
+            document.getElementById("footer-links").innerHTML = `<a href="/">${copy.footer.home}</a> &middot; &copy; 2026 Sabotage Media, LLC`;
+
+            renderSections(copy.sections);
+
+            const select = document.getElementById("language-select");
+            select.value = language;
+
+            if (persist) {
+                localStorage.setItem(STORAGE_KEY, language);
+            }
+        }
+
+        function populateLanguageSelect() {
+            const select = document.getElementById("language-select");
+            select.innerHTML = SUPPORTED_LANGUAGES.map(([code, label]) => `<option value="${code}">${label}</option>`).join("");
+            select.addEventListener("change", (event) => {
+                setLanguage(event.target.value, true);
+            });
+        }
+
+        populateLanguageSelect();
+        setLanguage(getInitialLanguage(), false);
+    </script>
 </body>
 </html>
