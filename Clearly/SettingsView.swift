@@ -24,7 +24,7 @@ struct SettingsView: View {
 
             mcpSettings
                 .tabItem {
-                    Label("MCP", systemImage: "network")
+                    Label(L10n.string("settings.tab.mcp", defaultValue: "MCP"), systemImage: "network")
                 }
 
             aboutView
@@ -125,30 +125,36 @@ struct SettingsView: View {
 
     private var mcpSettings: some View {
         Form {
-            // Status
             HStack {
-                Text("MCP Helper")
+                Text(L10n.string("settings.mcp.helper", defaultValue: "MCP Helper"))
                 Spacer()
                 if mcpBinaryInstalled {
                     Image(systemName: "checkmark.circle.fill")
                         .foregroundStyle(.green)
-                    Text("Installed")
+                    Text(L10n.string("settings.mcp.installed", defaultValue: "Installed"))
                         .foregroundStyle(.secondary)
                 } else {
                     Image(systemName: "xmark.circle.fill")
                         .foregroundStyle(.red)
-                    Text("Not Installed")
+                    Text(L10n.string("settings.mcp.notInstalled", defaultValue: "Not Installed"))
                         .foregroundStyle(.secondary)
                 }
             }
 
-            // Copy config
-            Button(mcpCopied ? "Copied!" : "Copy MCP Config") {
+            Button(
+                mcpCopied
+                    ? L10n.string("settings.mcp.copied", defaultValue: "Copied!")
+                    : L10n.string("settings.mcp.copyConfig", defaultValue: "Copy MCP Config")
+            ) {
                 copyMCPConfig()
             }
 
-            // Help text
-            Text("The MCP server lets AI agents search your notes, explore backlinks, and browse tags. It automatically discovers all your vaults. Copy the config and add it to any MCP-compatible app (Claude Desktop, Cursor, Windsurf, etc.).")
+            Text(
+                L10n.string(
+                    "settings.mcp.description",
+                    defaultValue: "The MCP server lets AI agents search your notes, explore backlinks, and browse tags. It automatically discovers all your vaults. Copy the config and add it to any MCP-compatible app (Claude Desktop, Cursor, Windsurf, etc.)."
+                )
+            )
                 .font(.caption)
                 .foregroundStyle(.tertiary)
         }

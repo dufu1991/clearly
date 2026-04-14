@@ -1,4 +1,5 @@
 "settings.tab.general" = "Allgemein";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "Über";
 "settings.general.language" = "Sprache";
 "settings.general.language.system" = "Systemsprache verwenden";
@@ -34,6 +35,12 @@
 "settings.about.website" = "Website";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "Kostenlos und Open Source unter der MIT License.";
+"settings.mcp.helper" = "MCP-Helfer";
+"settings.mcp.installed" = "Installiert";
+"settings.mcp.notInstalled" = "Nicht installiert";
+"settings.mcp.copyConfig" = "MCP-Konfiguration kopieren";
+"settings.mcp.copied" = "Kopiert!";
+"settings.mcp.description" = "Der MCP-Server ermöglicht es KI-Agenten, deine Notizen zu durchsuchen, Rückverweise zu erkunden und Tags zu durchsuchen. Er erkennt alle deine Vaults automatisch. Kopiere diese Konfiguration und füge sie in eine MCP-kompatible App wie Claude Desktop, Cursor, Windsurf usw. ein.";
 
 "iconPicker.color" = "Farbe";
 "iconPicker.color.none" = "Keine Farbe";
@@ -121,6 +128,7 @@
 "common.close" = "Schließen";
 "common.folder" = "Ordner";
 "common.file" = "Datei";
+"common.tag" = "Tag";
 "common.document" = "Dokument";
 "common.clearRecents" = "Zuletzt löschen";
 "common.moveToTrash" = "In den Papierkorb bewegen";

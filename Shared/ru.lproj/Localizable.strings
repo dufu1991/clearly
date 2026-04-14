@@ -1,4 +1,5 @@
 "settings.tab.general" = "Основные";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "О приложении";
 "settings.general.language" = "Язык";
 "settings.general.language.system" = "Как в системе";
@@ -34,6 +35,12 @@
 "settings.about.website" = "Сайт";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "Бесплатное приложение с открытым исходным кодом под лицензией MIT.";
+"settings.mcp.helper" = "Помощник MCP";
+"settings.mcp.installed" = "Установлен";
+"settings.mcp.notInstalled" = "Не установлен";
+"settings.mcp.copyConfig" = "Скопировать конфигурацию MCP";
+"settings.mcp.copied" = "Скопировано!";
+"settings.mcp.description" = "Сервер MCP позволяет AI-агентам искать по вашим заметкам, просматривать обратные ссылки и теги. Он автоматически обнаруживает все ваши хранилища. Скопируйте эту конфигурацию и добавьте её в любое приложение с поддержкой MCP, например Claude Desktop, Cursor, Windsurf и другие.";
 
 "iconPicker.color" = "Цвет";
 "iconPicker.color.none" = "Без цвета";
@@ -121,6 +128,7 @@
 "common.close" = "Закрыть";
 "common.folder" = "Папка";
 "common.file" = "Файл";
+"common.tag" = "Тег";
 "common.document" = "Документ";
 "common.clearRecents" = "Очистить недавние";
 "common.moveToTrash" = "Переместить в корзину";

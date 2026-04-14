@@ -984,7 +984,10 @@ struct FileExplorerOutlineView: NSViewRepresentable {
                 ))
                 cell.textField?.attributedStringValue = tagAttr
                 let tagConfig = NSImage.SymbolConfiguration(pointSize: 13, weight: .medium)
-                cell.imageView?.image = NSImage(systemSymbolName: "number", accessibilityDescription: "Tag")?.withSymbolConfiguration(tagConfig)
+                cell.imageView?.image = NSImage(
+                    systemSymbolName: "number",
+                    accessibilityDescription: localized("common.tag", "Tag")
+                )?.withSymbolConfiguration(tagConfig)
                 cell.imageView?.symbolConfiguration = tagConfig
                 cell.imageView?.contentTintColor = .secondaryLabelColor
                 cell.imageView?.isHidden = false

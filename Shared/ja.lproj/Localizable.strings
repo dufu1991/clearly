@@ -1,4 +1,5 @@
 "settings.tab.general" = "一般";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "情報";
 "settings.general.language" = "言語";
 "settings.general.language.system" = "システムに従う";
@@ -34,6 +35,12 @@
 "settings.about.website" = "ウェブサイト";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "MIT License のもとで無償公開されているオープンソースです。";
+"settings.mcp.helper" = "MCP ヘルパー";
+"settings.mcp.installed" = "インストール済み";
+"settings.mcp.notInstalled" = "未インストール";
+"settings.mcp.copyConfig" = "MCP 設定をコピー";
+"settings.mcp.copied" = "コピーしました！";
+"settings.mcp.description" = "MCP サーバーを使うと、AI エージェントがノートを検索し、バックリンクを調べ、タグを閲覧できます。すべての保管庫を自動検出します。設定をコピーして、Claude Desktop、Cursor、Windsurf などの MCP 対応アプリに追加してください。";
 
 "iconPicker.color" = "カラー";
 "iconPicker.color.none" = "色なし";
@@ -121,6 +128,7 @@
 "common.close" = "閉じる";
 "common.folder" = "フォルダ";
 "common.file" = "ファイル";
+"common.tag" = "タグ";
 "common.document" = "書類";
 "common.clearRecents" = "最近を消去";
 "common.moveToTrash" = "ゴミ箱に移動";

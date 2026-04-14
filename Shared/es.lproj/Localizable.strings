@@ -1,4 +1,5 @@
 "settings.tab.general" = "General";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "Acerca de";
 "settings.general.language" = "Idioma";
 "settings.general.language.system" = "Seguir al sistema";
@@ -34,6 +35,12 @@
 "settings.about.website" = "Sitio web";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "Software libre y de código abierto bajo la licencia MIT.";
+"settings.mcp.helper" = "Asistente de MCP";
+"settings.mcp.installed" = "Instalado";
+"settings.mcp.notInstalled" = "No instalado";
+"settings.mcp.copyConfig" = "Copiar configuración de MCP";
+"settings.mcp.copied" = "¡Copiado!";
+"settings.mcp.description" = "El servidor MCP permite que los agentes de IA busquen en tus notas, exploren enlaces entrantes y naveguen por etiquetas. Detecta automáticamente todos tus repositorios. Copia esta configuración y añádela a cualquier app compatible con MCP, como Claude Desktop, Cursor, Windsurf, etc.";
 
 "iconPicker.color" = "Color";
 "iconPicker.color.none" = "Sin color";
@@ -121,6 +128,7 @@
 "common.close" = "Cerrar";
 "common.folder" = "Carpeta";
 "common.file" = "Archivo";
+"common.tag" = "Etiqueta";
 "common.document" = "Documento";
 "common.clearRecents" = "Borrar recientes";
 "common.moveToTrash" = "Mover a la papelera";

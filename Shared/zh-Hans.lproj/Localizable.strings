@@ -1,4 +1,5 @@
 "settings.tab.general" = "通用";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "关于";
 "settings.general.language" = "语言";
 "settings.general.language.system" = "跟随系统";
@@ -34,6 +35,12 @@
 "settings.about.website" = "网站";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "基于 MIT License 免费开源。";
+"settings.mcp.helper" = "MCP 助手";
+"settings.mcp.installed" = "已安装";
+"settings.mcp.notInstalled" = "未安装";
+"settings.mcp.copyConfig" = "复制 MCP 配置";
+"settings.mcp.copied" = "已复制！";
+"settings.mcp.description" = "MCP 服务器可让 AI 代理搜索你的笔记、浏览反向链接并查看标签。它会自动发现你的所有仓库。复制这段配置，并将其添加到任何兼容 MCP 的应用中，例如 Claude Desktop、Cursor、Windsurf 等。";
 
 "iconPicker.color" = "颜色";
 "iconPicker.color.none" = "无颜色";
@@ -121,6 +128,7 @@
 "common.close" = "关闭";
 "common.folder" = "文件夹";
 "common.file" = "文件";
+"common.tag" = "标签";
 "common.document" = "文档";
 "common.clearRecents" = "清空最近";
 "common.moveToTrash" = "移到废纸篓";

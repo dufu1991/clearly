@@ -1,4 +1,5 @@
 "settings.tab.general" = "Général";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "À propos";
 "settings.general.language" = "Langue";
 "settings.general.language.system" = "Suivre le système";
@@ -34,6 +35,12 @@
 "settings.about.website" = "Site web";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "Logiciel gratuit et open source sous licence MIT.";
+"settings.mcp.helper" = "Assistant MCP";
+"settings.mcp.installed" = "Installé";
+"settings.mcp.notInstalled" = "Non installé";
+"settings.mcp.copyConfig" = "Copier la configuration MCP";
+"settings.mcp.copied" = "Copié !";
+"settings.mcp.description" = "Le serveur MCP permet aux agents IA de rechercher dans vos notes, d’explorer les rétroliens et de parcourir les étiquettes. Il découvre automatiquement tous vos espaces. Copiez cette configuration et ajoutez-la à toute application compatible MCP, comme Claude Desktop, Cursor, Windsurf, etc.";
 
 "iconPicker.color" = "Couleur";
 "iconPicker.color.none" = "Aucune couleur";
@@ -121,6 +128,7 @@
 "common.close" = "Fermer";
 "common.folder" = "Dossier";
 "common.file" = "Fichier";
+"common.tag" = "Étiquette";
 "common.document" = "Document";
 "common.clearRecents" = "Effacer les récents";
 "common.moveToTrash" = "Déplacer vers la corbeille";

@@ -1,4 +1,5 @@
 "settings.tab.general" = "通用";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "關於";
 "settings.general.language" = "語言";
 "settings.general.language.system" = "跟隨系統";
@@ -34,6 +35,12 @@
 "settings.about.website" = "網站";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "基於 MIT License 免費開源。";
+"settings.mcp.helper" = "MCP 助手";
+"settings.mcp.installed" = "已安裝";
+"settings.mcp.notInstalled" = "未安裝";
+"settings.mcp.copyConfig" = "複製 MCP 設定";
+"settings.mcp.copied" = "已複製！";
+"settings.mcp.description" = "MCP 伺服器可讓 AI 代理搜尋你的筆記、探索反向連結並瀏覽標籤。它會自動發現你的所有資料庫。複製這段設定，並將其加入任何相容 MCP 的應用程式，例如 Claude Desktop、Cursor、Windsurf 等。";
 
 "iconPicker.color" = "顏色";
 "iconPicker.color.none" = "無顏色";
@@ -121,6 +128,7 @@
 "common.close" = "關閉";
 "common.folder" = "資料夾";
 "common.file" = "文件";
+"common.tag" = "標籤";
 "common.document" = "文件";
 "common.clearRecents" = "清空最近";
 "common.moveToTrash" = "移到垃圾桶";

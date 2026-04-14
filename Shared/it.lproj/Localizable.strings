@@ -1,4 +1,5 @@
 "settings.tab.general" = "Generale";
+"settings.tab.mcp" = "MCP";
 "settings.tab.about" = "Informazioni";
 "settings.general.language" = "Lingua";
 "settings.general.language.system" = "Segui il sistema";
@@ -34,6 +35,12 @@
 "settings.about.website" = "Sito web";
 "settings.about.github" = "GitHub";
 "settings.about.license" = "Software gratuito e open source sotto licenza MIT.";
+"settings.mcp.helper" = "Helper MCP";
+"settings.mcp.installed" = "Installato";
+"settings.mcp.notInstalled" = "Non installato";
+"settings.mcp.copyConfig" = "Copia configurazione MCP";
+"settings.mcp.copied" = "Copiato!";
+"settings.mcp.description" = "Il server MCP permette agli agenti AI di cercare nelle tue note, esplorare i backlink e sfogliare i tag. Rileva automaticamente tutti i tuoi vault. Copia questa configurazione e aggiungila a qualsiasi app compatibile con MCP, come Claude Desktop, Cursor, Windsurf e così via.";
 
 "iconPicker.color" = "Colore";
 "iconPicker.color.none" = "Nessun colore";
@@ -121,6 +128,7 @@
 "common.close" = "Chiudi";
 "common.folder" = "Cartella";
 "common.file" = "File";
+"common.tag" = "Tag";
 "common.document" = "Documento";
 "common.clearRecents" = "Cancella recenti";
 "common.moveToTrash" = "Sposta nel cestino";
