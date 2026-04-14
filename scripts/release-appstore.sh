@@ -129,12 +129,11 @@ rm -rf build
 mkdir -p build
 
 # ── 1. Strip Sparkle keys from Info.plist (in place, restored later) ─────────
+# Run each delete independently so missing keys don't abort the script under set -e.
 cp Clearly/Info.plist build/Info-Original.plist
-/usr/libexec/PlistBuddy \
-  -c "Delete :SUFeedURL" \
-  -c "Delete :SUPublicEDKey" \
-  -c "Delete :SUEnableInstallerLauncherService" \
-  Clearly/Info.plist
+for key in SUFeedURL SUPublicEDKey SUEnableInstallerLauncherService; do
+  /usr/libexec/PlistBuddy -c "Delete :$key" Clearly/Info.plist 2>/dev/null || true
+done
 
 # ── 2. Generate project.yml without Sparkle or ClearlyMCP ───────────────────
 # The ClearlyMCP CLI is stripped from App Store builds: as a sandboxed helper
