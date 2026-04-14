@@ -294,15 +294,65 @@ asc_api PATCH "/appStoreVersions/$VERSION_ID/relationships/build" "{
 }" > /dev/null
 echo "   Attached build to version."
 
-# Submit for review
-asc_api POST "/appStoreVersionSubmissions" "{
-  \"data\": {
-    \"type\": \"appStoreVersionSubmissions\",
-    \"relationships\": {
-      \"appStoreVersion\": {
-        \"data\": { \"type\": \"appStoreVersions\", \"id\": \"$VERSION_ID\" }
+# Submit for review — uses the new reviewSubmissions API.
+# The old appStoreVersionSubmissions endpoint was retired; it now returns
+# 403 FORBIDDEN_ERROR with "The resource ... does not allow 'CREATE'".
+# New flow: create a reviewSubmission, attach the version as an item, then
+# PATCH the submission with submitted=true.
+
+# Reuse any existing in-flight submission for this platform, or create one.
+REVIEW_SUBMISSION_ID=$(asc_api GET "/reviewSubmissions?filter[app]=$APP_ID&filter[platform]=MAC_OS&filter[state]=READY_FOR_REVIEW,UNRESOLVED_ISSUES&fields[reviewSubmissions]=state" | \
+  python3 -c "
+import sys,json
+data = json.load(sys.stdin)['data']
+print(data[0]['id'] if data else '')
+")
+
+if [ -z "$REVIEW_SUBMISSION_ID" ]; then
+  REVIEW_SUBMISSION_ID=$(asc_api POST "/reviewSubmissions" "{
+    \"data\": {
+      \"type\": \"reviewSubmissions\",
+      \"attributes\": { \"platform\": \"MAC_OS\" },
+      \"relationships\": {
+        \"app\": { \"data\": { \"type\": \"apps\", \"id\": \"$APP_ID\" } }
       }
     }
+  }" | python3 -c "import sys,json; print(json.load(sys.stdin)['data']['id'])")
+  echo "   Created review submission: $REVIEW_SUBMISSION_ID"
+else
+  echo "   Using existing review submission: $REVIEW_SUBMISSION_ID"
+fi
+
+# Attach the version as a submission item (idempotent — skip if already present).
+EXISTING_ITEM=$(asc_api GET "/reviewSubmissions/$REVIEW_SUBMISSION_ID/items?fields[reviewSubmissionItems]=appStoreVersion&include=appStoreVersion" | \
+  python3 -c "
+import sys,json
+d = json.load(sys.stdin)
+for item in d.get('data', []):
+    rel = item.get('relationships', {}).get('appStoreVersion', {}).get('data') or {}
+    if rel.get('id') == '$VERSION_ID':
+        print(item['id']); break
+")
+
+if [ -z "$EXISTING_ITEM" ]; then
+  asc_api POST "/reviewSubmissionItems" "{
+    \"data\": {
+      \"type\": \"reviewSubmissionItems\",
+      \"relationships\": {
+        \"appStoreVersion\": { \"data\": { \"type\": \"appStoreVersions\", \"id\": \"$VERSION_ID\" } },
+        \"reviewSubmission\": { \"data\": { \"type\": \"reviewSubmissions\", \"id\": \"$REVIEW_SUBMISSION_ID\" } }
+      }
+    }
+  }" > /dev/null
+  echo "   Attached version to review submission."
+fi
+
+# Flip the submission to submitted=true to send it to App Review.
+asc_api PATCH "/reviewSubmissions/$REVIEW_SUBMISSION_ID" "{
+  \"data\": {
+    \"type\": \"reviewSubmissions\",
+    \"id\": \"$REVIEW_SUBMISSION_ID\",
+    \"attributes\": { \"submitted\": true }
   }
 }" > /dev/null
 
