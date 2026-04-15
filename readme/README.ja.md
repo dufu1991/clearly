@@ -192,10 +192,6 @@ ExportOptions.plist      # リリースビルド用 Developer ID 書き出し設
 5. Finder で `.md` ファイルを選択して Space を押し、QuickLook を試す
 6. ライトモードとダークモードの両方を確認する
 
-## AI Agent セットアップ
-
-このリポジトリには、アーキテクチャ情報を含む `CLAUDE.md` と、リリース自動化や開発オンボーディング用の Claude Code スキルが `.claude/skills/` に含まれています。
-
 ## ライセンス
 
 FSL-1.1-MIT — [LICENSE](../LICENSE) を参照してください。コードは 2 年後に MIT へ移行します。

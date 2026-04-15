@@ -192,10 +192,6 @@ Il n’y a pas de suite de tests automatisée. Vérifiez manuellement :
 5. Testez QuickLook en sélectionnant un fichier `.md` dans Finder puis en appuyant sur Espace
 6. Vérifiez les modes clair et sombre
 
-## Configuration de AI Agent
-
-Ce dépôt inclut un fichier `CLAUDE.md` avec le contexte d’architecture et des compétences Claude Code dans `.claude/skills/` pour l’automatisation des releases et l’onboarding de développement.
-
 ## Licence
 
 FSL-1.1-MIT — voir [LICENSE](../LICENSE). Le code devient MIT au bout de deux ans.

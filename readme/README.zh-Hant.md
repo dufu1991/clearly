@@ -192,10 +192,6 @@ ExportOptions.plist      # 發布建置的 Developer ID 匯出設定
 5. 在 Finder 中選取一個 `.md` 檔案並按空白鍵，測試 QuickLook
 6. 檢查淺色模式與深色模式
 
-## AI Agent 設定
-
-這個倉庫包含一個 `CLAUDE.md` 檔案，裡面提供架構背景，以及位於 `.claude/skills/` 中供 Claude Code 使用的發布自動化與開發入門技能。
-
 ## 授權
 
 FSL-1.1-MIT — 參見 [LICENSE](../LICENSE)。程式碼會在兩年後轉換為 MIT。

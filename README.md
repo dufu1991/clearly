@@ -208,10 +208,6 @@ No automated test suite. Validate manually:
 5. QuickLook: select a `.md` in Finder, press Space
 6. Check both light and dark mode
 
-## AI Agent Setup
-
-This repo includes a `CLAUDE.md` file with architecture context and Claude Code skills in `.claude/skills/` for release automation and dev onboarding.
-
 ## License
 
 FSL-1.1-MIT — see [LICENSE](LICENSE). Code converts to MIT after two years.

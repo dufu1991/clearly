@@ -192,10 +192,6 @@ ExportOptions.plist      # 릴리스 빌드용 Developer ID 내보내기 설정
 5. Finder 에서 `.md` 파일을 선택하고 Space 를 눌러 QuickLook 테스트하기
 6. 라이트 모드와 다크 모드 모두 확인하기
 
-## AI Agent 설정
-
-이 저장소에는 아키텍처 맥락을 담은 `CLAUDE.md` 와 릴리스 자동화 및 개발 온보딩을 위한 Claude Code 스킬이 `.claude/skills/` 에 포함되어 있습니다.
-
 ## 라이선스
 
 FSL-1.1-MIT — [LICENSE](../LICENSE) 를 참고하세요. 코드는 2 년 후 MIT 로 전환됩니다。
