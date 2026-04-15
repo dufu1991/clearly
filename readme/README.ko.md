@@ -2,9 +2,9 @@
   <img src="../website/icon.png" width="128" height="128" alt="Clearly icon" />
 </p>
 
-<h1 align="center">Clearly Markdown</h1>
+<h1 align="center">Clearly</h1>
 
-<p align="center">macOS 용 네이티브 Markdown 에디터이자 문서 작업 공간입니다.</p>
+<p align="center">Mac 용 Markdown 에디터이자 지식 베이스입니다.</p>
 
 <p align="center">
   <a href="../README.md">English</a> ·
@@ -20,36 +20,62 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">다운로드</a> &middot;
+  <a href="https://apps.apple.com/app/clearly-markdown/id6760669470">Mac App Store</a> &middot;
+  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">직접 다운로드</a> &middot;
   <a href="https://clearly.md">웹사이트</a> &middot;
   <a href="https://x.com/Shpigford">@Shpigford</a>
 </p>
 
 <p align="center">
-  <img src="../website/screenshot.jpg" width="720" alt="Clearly screenshot" />
+  <img src="../website/screenshots/screenshot-1.jpg" width="720" alt="Clearly — 사이드바와 문서 개요를 갖춘 에디터" />
 </p>
 
-폴더를 열고, 파일을 탐색하고, 구문 강조와 함께 작성하고, 즉시 미리 볼 수 있습니다. Electron 도 없고, 구독도 없고, 군더더기도 없습니다.
+구문 강조와 함께 작성하고, wiki links 로 생각을 연결하고, 모든 내용을 검색하고, 아름답게 미리 볼 수 있습니다. 네이티브 macOS 앱이며 Electron 과 구독이 없습니다.
 
 ## 기능
 
-- **파일 탐색기** — 폴더를 열고, 북마크 위치와 최근 항목과 함께 사이드바에서 Markdown 파일을 탐색
-- **문서 개요** — 섹션 간 이동을 위한 탐색 가능한 제목 개요 패널（⇧⌘O）
-- **구문 강조** — 제목, 굵게, 기울임꼴, 링크, 코드 블록, 표, 각주, 하이라이트 등을 지원
-- **즉시 미리 보기** — Mermaid 다이어그램과 KaTeX 수학식을 포함한 GitHub Flavored Markdown 렌더링
-- **코드 구문 강조** — Highlight.js 를 통해 27+ 개 언어를 지원하고 줄 번호와 diff 강조를 제공
-- **Callout 및 Admonition** — `> [!NOTE]`, `> [!WARNING]`, 그리고 접기 가능한 15 가지 callout 유형 지원
-- **확장 Markdown** — ==highlights==, ^superscript^, ~subscript~, :emoji: 단축 코드와 `[TOC]` 생성을 지원
-- **인터랙티브 미리 보기** — 클릭 가능한 작업 체크박스, 제목 앵커 링크, 이미지 라이트박스, 각주 팝오버 지원
-- **소스로 이동** — 미리 보기에서 아무 요소나 더블클릭하면 편집기 내 해당 소스 줄로 이동
-- **Frontmatter 지원** — YAML Frontmatter 를 편집기와 미리 보기 모두에서 깔끔하게 표시
-- **편집기 / 미리 보기 전환** — 편집기（⌘1）와 미리 보기（⌘2）사이를 오가도 스크롤 위치 유지
-- **PDF 내보내기** — 앱에서 직접 PDF 로 내보내거나 인쇄 가능
-- **서식 단축키** — 굵게, 기울임꼴, 링크용 ⌘B, ⌘I, ⌘K 지원
-- **Scratchpad** — 문서를 열지 않고 빠른 메모를 남길 수 있는 전역 단축키 포함 메뉴 막대 앱
-- **QuickLook** — Finder 안에서 `.md` 파일을 바로 미리 보기
-- **라이트 / 다크** — 시스템 모양을 따르거나 수동으로 설정 가능
-- **다국어 UI** — 인터페이스는 여러 언어를 지원
+### 작성
+
+- **구문 강조** — 제목, 굵게, 기울임꼴, 링크, 코드 블록, 표를 입력하는 즉시 강조
+- **서식 단축키** — ⌘B 굵게, ⌘I 기울임꼴, ⌘K 링크
+- **확장 Markdown** — `==하이라이트==`, `^위첨자^`, `~아래첨자~`, `:emoji:`, `[TOC]`
+- **Scratchpad** — 전역 단축키를 갖춘 메뉴 막대 메모장
+
+### 지식 관리
+
+- **Wiki links** — `[[wiki-links]]` 로 문서를 연결하고 `[[` 로 자동 완성
+- **Backlinks** — 연결된 언급과 미연결 언급을 한 번에 연결
+- **Tags** — `#tags` 로 정리하고 사이드바에서 탐색
+- **전역 검색** — 모든 문서를 대상으로 한 관련도 기반 전체 텍스트 검색
+- **문서 개요** — 클릭으로 이동할 수 있는 제목 구조
+- **파일 탐색기** — 폴더 탐색, 위치 고정, 파일 생성 및 이름 변경
+
+### 미리 보기
+
+- **GFM 렌더링** — 표, 작업 목록, 각주, 취소선
+- **KaTeX 수식** — 인라인 수식과 블록 수식
+- **Mermaid 다이어그램** — 코드 블록에서 플로우차트와 시퀀스 다이어그램 렌더링
+- **코드 블록** — 27+ 개 언어, 줄 번호, diff 강조, 원클릭 복사
+- **Callouts** — NOTE, TIP, WARNING 등 15+ 가지 접을 수 있는 유형
+- **인터랙티브** — 체크박스 토글, 이미지 확대, 각주 호버, 더블클릭으로 소스 이동
+
+### 연동
+
+- **AI / MCP Server** — 내장 MCP Server 가 vault 를 AI Agents 의 검색 및 검색 결과 대상으로 노출
+- **QuickLook** — Finder 에서 `.md` 파일을 Space 로 미리 보기
+- **PDF 내보내기** — 페이지 나눔을 처리한 채 내보내기 또는 인쇄
+- **복사 형식** — Markdown, HTML, 리치 텍스트
+
+## 스크린샷
+
+<p>
+  <img src="../website/screenshots/screenshot-2-alt.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-3.jpg" width="360" alt="" />
+</p>
+<p>
+  <img src="../website/screenshots/screenshot-4.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-5-alt.jpg" width="360" alt="" />
+</p>
 
 ## 준비 사항
 
@@ -162,20 +188,13 @@ ExportOptions.plist      # 릴리스 빌드용 Developer ID 내보내기 설정
 1. 앱을 빌드하고 실행하기（⌘R）
 2. `.md` 파일을 열고 구문 강조가 올바른지 확인하기
 3. 미리 보기 모드（⌘2）로 전환하고 렌더링 결과 확인하기
-4. Finder 에서 `.md` 파일을 선택하고 Space 를 눌러 QuickLook 테스트하기
-5. 라이트 모드와 다크 모드 모두 확인하기
-
-## 웹사이트
-
-마케팅 사이트는 `website/` 안의 정적 HTML 이며, [clearly.md](https://clearly.md) 에 배포됩니다.
-
-- `website/index.html` — 랜딩 페이지（버전 문자열은 174 번째 줄）
-- `website/privacy.html` — 개인정보 처리방침
-- `website/appcast.xml` — Sparkle 자동 업데이트 피드（`scripts/release.sh` 로 갱신）
+4. wiki links, backlinks, 검색, tags 를 테스트하기
+5. Finder 에서 `.md` 파일을 선택하고 Space 를 눌러 QuickLook 테스트하기
+6. 라이트 모드와 다크 모드 모두 확인하기
 
 ## AI Agent 설정
 
-이 저장소에는 전체 아키텍처 맥락을 담은 `CLAUDE.md` 와 릴리스 자동화 및 개발 온보딩을 위한 Claude Code 스킬이 `.claude/skills/` 에 포함되어 있습니다. Claude Code 를 사용 중이라면 자동으로 인식됩니다.
+이 저장소에는 아키텍처 맥락을 담은 `CLAUDE.md` 와 릴리스 자동화 및 개발 온보딩을 위한 Claude Code 스킬이 `.claude/skills/` 에 포함되어 있습니다.
 
 ## 라이선스
 

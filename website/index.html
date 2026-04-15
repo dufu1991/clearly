@@ -132,7 +132,7 @@
                 <div class="space-y-16">
                     <div>
                         <h2 id="section-writing" class="font-mono text-xs tracking-wide uppercase text-zinc-600 mb-6">Writing</h2>
-                        <dl class="space-y-3">
+                        <dl id="list-writing" class="space-y-3">
                             <div class="sm:flex sm:gap-2 text-sm">
                                 <dt class="font-medium text-zinc-200 sm:shrink-0">Syntax Highlighting</dt>
                                 <dd class="text-zinc-500"><span class="max-sm:hidden">&mdash; </span>Headings, bold, italic, links, code blocks, tables, highlighted as you type.</dd>
@@ -154,7 +154,7 @@
 
                     <div>
                         <h2 id="section-knowledge" class="font-mono text-xs tracking-wide uppercase text-zinc-600 mb-6">Knowledge</h2>
-                        <dl class="space-y-3">
+                        <dl id="list-knowledge" class="space-y-3">
                             <div class="sm:flex sm:gap-2 text-sm">
                                 <dt class="font-medium text-zinc-200 sm:shrink-0">Wiki-links</dt>
                                 <dd class="text-zinc-500"><span class="max-sm:hidden">&mdash; </span>Link documents with <code>[[wiki-links]]</code>. Type <code>[[</code> to autocomplete.</dd>
@@ -184,7 +184,7 @@
 
                     <div>
                         <h2 id="section-preview" class="font-mono text-xs tracking-wide uppercase text-zinc-600 mb-6">Preview</h2>
-                        <dl class="space-y-3">
+                        <dl id="list-preview" class="space-y-3">
                             <div class="sm:flex sm:gap-2 text-sm">
                                 <dt class="font-medium text-zinc-200 sm:shrink-0">GFM Rendering</dt>
                                 <dd class="text-zinc-500"><span class="max-sm:hidden">&mdash; </span>Tables, task lists, footnotes, strikethrough.</dd>
@@ -214,7 +214,7 @@
 
                     <div>
                         <h2 id="section-integration" class="font-mono text-xs tracking-wide uppercase text-zinc-600 mb-6">Integration</h2>
-                        <dl class="space-y-3">
+                        <dl id="list-integration" class="space-y-3">
                             <div class="sm:flex sm:gap-2 text-sm">
                                 <dt class="font-medium text-zinc-200 sm:shrink-0">AI / MCP Server</dt>
                                 <dd class="text-zinc-500"><span class="max-sm:hidden">&mdash; </span>Expose your vault to AI agents for search and retrieval.</dd>
@@ -300,6 +300,34 @@
                 knowledge: "Knowledge",
                 preview: "Preview",
                 integration: "Integration",
+                writingItems: [
+                    ["Syntax Highlighting", "Headings, bold, italic, links, code blocks, tables, highlighted as you type."],
+                    ["Format Shortcuts", "⌘B bold, ⌘I italic, ⌘K links."],
+                    ["Extended Markdown", "Highlights, superscript, subscript, emoji shortcodes, table of contents."],
+                    ["Scratchpad", "Menubar scratch pad with a global hotkey."]
+                ],
+                knowledgeItems: [
+                    ["Wiki-links", "Link documents with <code>[[wiki-links]]</code>. Type <code>[[</code> to autocomplete."],
+                    ["Backlinks", "Linked and unlinked mentions with one-click linking."],
+                    ["Tags", "Organize with <code>#tags</code>. Browse them from the sidebar."],
+                    ["Global Search", "Full-text search across every document, ranked by relevance."],
+                    ["Document Outline", "Navigate headings and jump instantly."],
+                    ["File Explorer", "Browse folders, bookmark locations, create and rename files."]
+                ],
+                previewItems: [
+                    ["GFM Rendering", "Tables, task lists, footnotes, strikethrough."],
+                    ["KaTeX Math", "Inline and block equations."],
+                    ["Mermaid Diagrams", "Flowcharts and sequence diagrams from code blocks."],
+                    ["Code Blocks", "27+ languages, line numbers, diff highlighting, one-click copy."],
+                    ["Callouts", "NOTE, TIP, WARNING, and 15+ foldable types."],
+                    ["Interactive", "Toggle checkboxes, zoom images, hover footnotes, double-click to source."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "Expose your vault to AI agents for search and retrieval."],
+                    ["QuickLook", "Preview <code>.md</code> files in Finder with Space."],
+                    ["PDF Export", "Export or print with page breaks handled."],
+                    ["Copy Formats", "Markdown, HTML, or rich text."]
+                ],
                 privacy: "Privacy",
                 language: "Language"
             },
@@ -317,6 +345,34 @@
                 knowledge: "知识管理",
                 preview: "预览",
                 integration: "集成",
+                writingItems: [
+                    ["语法高亮", "标题、粗体、斜体、链接、代码块、表格都会在输入时即时高亮。"],
+                    ["格式快捷键", "⌘B 加粗，⌘I 斜体，⌘K 插入链接。"],
+                    ["扩展 Markdown", "支持高亮、上标、下标、emoji 短代码与目录。"],
+                    ["Scratchpad", "带全局快捷键的菜单栏速记板。"]
+                ],
+                knowledgeItems: [
+                    ["Wiki 链接", "使用 <code>[[wiki-links]]</code> 连接文档，输入 <code>[[</code> 即可自动补全。"],
+                    ["反向链接", "已链接与未链接提及都可一键关联。"],
+                    ["标签", "使用 <code>#tags</code> 组织内容，并在侧边栏浏览。"],
+                    ["全局搜索", "覆盖全部文档的全文搜索，并按相关性排序。"],
+                    ["文档大纲", "浏览标题结构，点击即可快速跳转。"],
+                    ["文件浏览器", "浏览文件夹、收藏位置、创建并重命名文件。"]
+                ],
+                previewItems: [
+                    ["GFM 渲染", "支持表格、任务列表、脚注与删除线。"],
+                    ["KaTeX 数学公式", "支持行内与块级公式。"],
+                    ["Mermaid 图表", "从代码块渲染流程图与时序图。"],
+                    ["代码块", "支持 27+ 种语言、行号、diff 高亮与一键复制。"],
+                    ["Callout", "支持 NOTE、TIP、WARNING 等 15+ 种可折叠类型。"],
+                    ["交互式预览", "可切换复选框、缩放图片、悬停脚注，并双击跳回源码。"]
+                ],
+                integrationItems: [
+                    ["AI / MCP 服务器", "内置 MCP server，可将知识库暴露给 AI agent 做搜索与检索。"],
+                    ["QuickLook", "在 Finder 中按空格预览 <code>.md</code> 文件。"],
+                    ["PDF 导出", "支持导出或打印，并正确处理分页。"],
+                    ["复制格式", "支持复制 Markdown、HTML 或富文本。"]
+                ],
                 privacy: "隐私政策",
                 language: "语言"
             },
@@ -334,6 +390,34 @@
                 knowledge: "知識管理",
                 preview: "預覽",
                 integration: "整合",
+                writingItems: [
+                    ["語法高亮", "標題、粗體、斜體、連結、程式碼區塊、表格都會在輸入時即時高亮。"],
+                    ["格式快捷鍵", "⌘B 粗體，⌘I 斜體，⌘K 插入連結。"],
+                    ["擴充 Markdown", "支援高亮、上標、下標、emoji 短碼與目錄。"],
+                    ["Scratchpad", "帶有全域快捷鍵的選單列速記板。"]
+                ],
+                knowledgeItems: [
+                    ["Wiki 連結", "使用 <code>[[wiki-links]]</code> 串連文件，輸入 <code>[[</code> 即可自動補全。"],
+                    ["反向連結", "已連結與未連結提及都能一鍵建立關聯。"],
+                    ["標籤", "使用 <code>#tags</code> 組織內容，並可在側邊欄瀏覽。"],
+                    ["全域搜尋", "覆蓋所有文件的全文搜尋，並按相關性排序。"],
+                    ["文件大綱", "瀏覽標題結構，點擊即可快速跳轉。"],
+                    ["檔案瀏覽器", "瀏覽資料夾、收藏位置、建立並重新命名檔案。"]
+                ],
+                previewItems: [
+                    ["GFM 渲染", "支援表格、任務清單、腳註與刪除線。"],
+                    ["KaTeX 數學公式", "支援行內與區塊公式。"],
+                    ["Mermaid 圖表", "從程式碼區塊渲染流程圖與時序圖。"],
+                    ["程式碼區塊", "支援 27+ 種語言、行號、diff 高亮與一鍵複製。"],
+                    ["Callout", "支援 NOTE、TIP、WARNING 等 15+ 種可摺疊類型。"],
+                    ["互動式預覽", "可切換核取方塊、縮放圖片、懸停腳註，並雙擊跳回原始碼。"]
+                ],
+                integrationItems: [
+                    ["AI / MCP 伺服器", "內建 MCP server，可將知識庫暴露給 AI agent 做搜尋與檢索。"],
+                    ["QuickLook", "在 Finder 中按空白鍵預覽 <code>.md</code> 檔案。"],
+                    ["PDF 匯出", "支援匯出或列印，並正確處理分頁。"],
+                    ["複製格式", "支援複製 Markdown、HTML 或 RTF。"]
+                ],
                 privacy: "隱私權",
                 language: "語言"
             },
@@ -351,6 +435,34 @@
                 knowledge: "知識管理",
                 preview: "プレビュー",
                 integration: "連携",
+                writingItems: [
+                    ["シンタックスハイライト", "見出し、太字、斜体、リンク、コードブロック、表を入力中にそのまま強調表示します。"],
+                    ["書式ショートカット", "⌘B で太字、⌘I で斜体、⌘K でリンクを挿入できます。"],
+                    ["拡張 Markdown", "ハイライト、上付き、下付き、emoji ショートコード、目次に対応します。"],
+                    ["Scratchpad", "グローバルホットキー付きのメニューバー用メモです。"]
+                ],
+                knowledgeItems: [
+                    ["Wiki links", "<code>[[wiki-links]]</code> で文書を接続できます。<code>[[</code> でオートコンプリートが始まります。"],
+                    ["Backlinks", "リンク済みと未リンクの参照をワンクリックで接続できます。"],
+                    ["Tags", "<code>#tags</code> で整理し、サイドバーから参照できます。"],
+                    ["グローバル検索", "すべての文書を対象に関連度順で全文検索できます。"],
+                    ["ドキュメントアウトライン", "見出し構造をたどってすばやく移動できます。"],
+                    ["ファイルエクスプローラ", "フォルダ参照、場所の固定、ファイル作成とリネームに対応します。"]
+                ],
+                previewItems: [
+                    ["GFM レンダリング", "表、タスクリスト、脚注、打ち消し線に対応します。"],
+                    ["KaTeX 数式", "インライン数式とブロック数式に対応します。"],
+                    ["Mermaid 図", "コードブロックからフローチャートとシーケンス図を描画します。"],
+                    ["コードブロック", "27+ 言語、行番号、diff ハイライト、ワンクリックコピーに対応します。"],
+                    ["Callouts", "NOTE、TIP、WARNING など 15+ 種類を折りたたみ可能です。"],
+                    ["インタラクティブ", "チェックボックス切り替え、画像ズーム、脚注ホバー、ダブルクリックでソースへ移動できます。"]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "内蔵 MCP server が vault を AI agent 向けの検索対象として公開します。"],
+                    ["QuickLook", "Finder で <code>.md</code> ファイルを Space ですばやく確認できます。"],
+                    ["PDF 書き出し", "ページ区切り込みで書き出しまたは印刷できます。"],
+                    ["コピー形式", "Markdown、HTML、リッチテキストをコピーできます。"]
+                ],
                 privacy: "プライバシー",
                 language: "言語"
             },
@@ -368,6 +480,34 @@
                 knowledge: "지식 관리",
                 preview: "미리 보기",
                 integration: "연동",
+                writingItems: [
+                    ["구문 강조", "제목, 굵게, 기울임꼴, 링크, 코드 블록, 표를 입력하는 즉시 강조합니다."],
+                    ["서식 단축키", "⌘B 굵게, ⌘I 기울임꼴, ⌘K 링크를 지원합니다."],
+                    ["확장 Markdown", "하이라이트, 위첨자, 아래첨자, emoji 단축 코드, 목차를 지원합니다."],
+                    ["Scratchpad", "전역 단축키를 갖춘 메뉴 막대 메모장입니다."]
+                ],
+                knowledgeItems: [
+                    ["Wiki links", "<code>[[wiki-links]]</code> 로 문서를 연결하고 <code>[[</code> 로 자동 완성을 시작합니다."],
+                    ["Backlinks", "연결된 언급과 미연결 언급을 한 번에 연결할 수 있습니다."],
+                    ["Tags", "<code>#tags</code> 로 정리하고 사이드바에서 탐색할 수 있습니다."],
+                    ["전역 검색", "모든 문서를 대상으로 한 관련도 기반 전체 텍스트 검색을 제공합니다."],
+                    ["문서 개요", "제목 구조를 따라 빠르게 이동할 수 있습니다."],
+                    ["파일 탐색기", "폴더 탐색, 위치 고정, 파일 생성 및 이름 변경을 지원합니다."]
+                ],
+                previewItems: [
+                    ["GFM 렌더링", "표, 작업 목록, 각주, 취소선을 지원합니다."],
+                    ["KaTeX 수식", "인라인 수식과 블록 수식을 지원합니다."],
+                    ["Mermaid 다이어그램", "코드 블록에서 플로우차트와 시퀀스 다이어그램을 렌더링합니다."],
+                    ["코드 블록", "27+ 개 언어, 줄 번호, diff 강조, 원클릭 복사를 지원합니다."],
+                    ["Callouts", "NOTE, TIP, WARNING 등 15+ 가지 접을 수 있는 유형을 지원합니다."],
+                    ["인터랙티브", "체크박스 토글, 이미지 확대, 각주 호버, 더블클릭으로 소스 이동이 가능합니다."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "내장 MCP server 가 vault 를 AI agent 의 검색 및 검색 결과 대상으로 노출합니다."],
+                    ["QuickLook", "Finder 에서 <code>.md</code> 파일을 Space 로 미리 볼 수 있습니다."],
+                    ["PDF 내보내기", "페이지 나눔을 처리한 채 내보내거나 인쇄할 수 있습니다."],
+                    ["복사 형식", "Markdown, HTML, 리치 텍스트를 복사할 수 있습니다."]
+                ],
                 privacy: "개인정보 처리방침",
                 language: "언어"
             },
@@ -385,6 +525,34 @@
                 knowledge: "Conocimiento",
                 preview: "Vista previa",
                 integration: "Integración",
+                writingItems: [
+                    ["Resaltado de sintaxis", "Encabezados, negrita, cursiva, enlaces, bloques de código y tablas resaltados mientras escribes."],
+                    ["Atajos de formato", "⌘B negrita, ⌘I cursiva, ⌘K enlaces."],
+                    ["Markdown extendido", "Resaltados, superíndice, subíndice, atajos emoji y tabla de contenidos."],
+                    ["Scratchpad", "Bloc de notas en la barra de menús con atajo global."]
+                ],
+                knowledgeItems: [
+                    ["Wiki-links", "Enlaza documentos con <code>[[wiki-links]]</code>. Escribe <code>[[</code> para autocompletar."],
+                    ["Backlinks", "Menciones enlazadas y no enlazadas con vinculación en un clic."],
+                    ["Tags", "Organiza con <code>#tags</code> y recórrelos desde la barra lateral."],
+                    ["Búsqueda global", "Búsqueda de texto completo en todos los documentos, ordenada por relevancia."],
+                    ["Esquema del documento", "Navega por encabezados y salta al instante."],
+                    ["Explorador de archivos", "Navega carpetas, fija ubicaciones, crea y renombra archivos."]
+                ],
+                previewItems: [
+                    ["Renderizado GFM", "Tablas, listas de tareas, notas al pie y tachado."],
+                    ["Matemáticas KaTeX", "Ecuaciones inline y de bloque."],
+                    ["Diagramas Mermaid", "Diagramas de flujo y secuencia desde bloques de código."],
+                    ["Bloques de código", "27+ lenguajes, números de línea, resaltado diff y copia en un clic."],
+                    ["Callouts", "NOTE, TIP, WARNING y más de 15 tipos plegables."],
+                    ["Interactivo", "Alterna casillas, amplía imágenes, pasa sobre notas al pie y vuelve al origen con doble clic."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "Expón tu vault a agentes de AI para búsqueda y recuperación."],
+                    ["QuickLook", "Previsualiza archivos <code>.md</code> en Finder con Espacio."],
+                    ["Exportación PDF", "Exporta o imprime con saltos de página resueltos."],
+                    ["Formatos de copia", "Markdown, HTML o texto enriquecido."]
+                ],
                 privacy: "Privacidad",
                 language: "Idioma"
             },
@@ -402,6 +570,34 @@
                 knowledge: "База знаний",
                 preview: "Предпросмотр",
                 integration: "Интеграции",
+                writingItems: [
+                    ["Подсветка синтаксиса", "Заголовки, жирный текст, курсив, ссылки, блоки кода и таблицы подсвечиваются во время набора."],
+                    ["Горячие клавиши форматирования", "⌘B жирный, ⌘I курсив, ⌘K ссылки."],
+                    ["Расширенный Markdown", "Выделение, надстрочный, подстрочный текст, emoji и оглавление."],
+                    ["Scratchpad", "Заметки в строке меню с глобальной горячей клавишей."]
+                ],
+                knowledgeItems: [
+                    ["Wiki-links", "Связывайте документы через <code>[[wiki-links]]</code>. <code>[[</code> запускает автодополнение."],
+                    ["Backlinks", "Связанные и несвязанные упоминания с привязкой в один клик."],
+                    ["Tags", "Организуйте записи с помощью <code>#tags</code> и просматривайте их в боковой панели."],
+                    ["Глобальный поиск", "Полнотекстовый поиск по всем документам с сортировкой по релевантности."],
+                    ["Структура документа", "Навигация по заголовкам с быстрым переходом."],
+                    ["Проводник файлов", "Просмотр папок, закрепление мест, создание и переименование файлов."]
+                ],
+                previewItems: [
+                    ["Рендеринг GFM", "Таблицы, списки задач, сноски и зачёркивание."],
+                    ["Формулы KaTeX", "Строчные и блочные уравнения."],
+                    ["Диаграммы Mermaid", "Блок схемы и sequence diagram из блоков кода."],
+                    ["Блоки кода", "27+ языков, номера строк, diff подсветка и копирование в один клик."],
+                    ["Callouts", "NOTE, TIP, WARNING и ещё 15+ сворачиваемых типов."],
+                    ["Интерактивность", "Переключение чекбоксов, увеличение изображений, hover по сноскам и двойной щелчок к исходнику."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "Откройте ваш vault для AI agents, поиска и извлечения данных."],
+                    ["QuickLook", "Просмотр <code>.md</code> файлов в Finder по клавише Space."],
+                    ["Экспорт PDF", "Экспорт или печать с корректной разбивкой страниц."],
+                    ["Форматы копирования", "Markdown, HTML или rich text."]
+                ],
                 privacy: "Конфиденциальность",
                 language: "Язык"
             },
@@ -419,6 +615,34 @@
                 knowledge: "Connaissance",
                 preview: "Aperçu",
                 integration: "Intégration",
+                writingItems: [
+                    ["Coloration syntaxique", "Titres, gras, italique, liens, blocs de code et tableaux surlignés pendant la saisie."],
+                    ["Raccourcis de formatage", "⌘B gras, ⌘I italique, ⌘K liens."],
+                    ["Markdown étendu", "Surlignage, exposant, indice, raccourcis emoji et table des matières."],
+                    ["Scratchpad", "Bloc notes de barre de menus avec raccourci global."]
+                ],
+                knowledgeItems: [
+                    ["Wiki-links", "Reliez des documents avec <code>[[wiki-links]]</code>. Tapez <code>[[</code> pour l’autocomplétion."],
+                    ["Backlinks", "Mentions liées et non liées avec liaison en un clic."],
+                    ["Tags", "Organisez avec <code>#tags</code> et parcourez les tags depuis la barre latérale."],
+                    ["Recherche globale", "Recherche plein texte dans tous les documents, triée par pertinence."],
+                    ["Plan du document", "Naviguez dans les titres et sautez instantanément."],
+                    ["Explorateur de fichiers", "Parcourez des dossiers, épinglez des emplacements, créez et renommez des fichiers."]
+                ],
+                previewItems: [
+                    ["Rendu GFM", "Tableaux, listes de tâches, notes de bas de page et texte barré."],
+                    ["Maths KaTeX", "Équations inline et en bloc."],
+                    ["Diagrammes Mermaid", "Organigrammes et diagrammes de séquence depuis des blocs de code."],
+                    ["Blocs de code", "27+ langages, numéros de ligne, surlignage diff et copie en un clic."],
+                    ["Callouts", "NOTE, TIP, WARNING et plus de 15 types repliables."],
+                    ["Interactif", "Cochez des cases, zoomez des images, survolez les notes de bas de page et revenez à la source par double clic."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "Exposez votre vault aux agents AI pour la recherche et la récupération."],
+                    ["QuickLook", "Prévisualisez les fichiers <code>.md</code> dans Finder avec Espace."],
+                    ["Export PDF", "Export ou impression avec gestion correcte des sauts de page."],
+                    ["Formats de copie", "Markdown, HTML ou texte enrichi."]
+                ],
                 privacy: "Confidentialité",
                 language: "Langue"
             },
@@ -436,6 +660,34 @@
                 knowledge: "Wissen",
                 preview: "Vorschau",
                 integration: "Integration",
+                writingItems: [
+                    ["Syntaxhervorhebung", "Überschriften, Fett, Kursiv, Links, Codeblöcke und Tabellen werden beim Tippen direkt hervorgehoben."],
+                    ["Formatierungs Shortcuts", "⌘B für Fett, ⌘I für Kursiv, ⌘K für Links."],
+                    ["Erweitertes Markdown", "Hervorhebungen, Hochgestellt, Tiefgestellt, Emoji Kurzbefehle und Inhaltsverzeichnis."],
+                    ["Scratchpad", "Menubar Notizzettel mit globalem Hotkey."]
+                ],
+                knowledgeItems: [
+                    ["Wiki-links", "Dokumente mit <code>[[wiki-links]]</code> verknüpfen. <code>[[</code> startet die Autovervollständigung."],
+                    ["Backlinks", "Verlinkte und unverlinkte Erwähnungen mit einem Klick verbinden."],
+                    ["Tags", "Inhalte mit <code>#tags</code> organisieren und in der Seitenleiste durchsuchen."],
+                    ["Globale Suche", "Volltextsuche über alle Dokumente, nach Relevanz sortiert."],
+                    ["Dokumentgliederung", "Überschriften durchsuchen und sofort springen."],
+                    ["Dateiexplorer", "Ordner durchsuchen, Orte merken, Dateien erstellen und umbenennen."]
+                ],
+                previewItems: [
+                    ["GFM Rendering", "Tabellen, Aufgabenlisten, Fußnoten und Durchstreichungen."],
+                    ["KaTeX Mathematik", "Inline und Block Gleichungen."],
+                    ["Mermaid Diagramme", "Flussdiagramme und Sequenzdiagramme aus Codeblöcken."],
+                    ["Codeblöcke", "27+ Sprachen, Zeilennummern, diff Hervorhebung und Kopieren mit einem Klick."],
+                    ["Callouts", "NOTE, TIP, WARNING und 15+ einklappbare Typen."],
+                    ["Interaktiv", "Checkboxen umschalten, Bilder zoomen, Fußnoten anzeigen und per Doppelklick zur Quelle springen."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "Macht deinen Vault für AI Agents durchsuchbar und abrufbar."],
+                    ["QuickLook", "<code>.md</code> Dateien im Finder mit Space vorschauen."],
+                    ["PDF Export", "Exportieren oder drucken, Seitenumbrüche inklusive."],
+                    ["Kopierformate", "Markdown, HTML oder Rich Text."]
+                ],
                 privacy: "Datenschutz",
                 language: "Sprache"
             },
@@ -453,6 +705,34 @@
                 knowledge: "Conoscenza",
                 preview: "Anteprima",
                 integration: "Integrazione",
+                writingItems: [
+                    ["Evidenziazione della sintassi", "Titoli, grassetto, corsivo, link, blocchi di codice e tabelle evidenziati mentre scrivi."],
+                    ["Scorciatoie di formattazione", "⌘B grassetto, ⌘I corsivo, ⌘K link."],
+                    ["Markdown esteso", "Evidenziazioni, apice, pedice, scorciatoie emoji e sommario."],
+                    ["Scratchpad", "Taccuino da barra dei menu con scorciatoia globale."]
+                ],
+                knowledgeItems: [
+                    ["Wiki-links", "Collega documenti con <code>[[wiki-links]]</code>. Digita <code>[[</code> per l’autocompletamento."],
+                    ["Backlinks", "Menzioni collegate e non collegate con collegamento in un clic."],
+                    ["Tags", "Organizza con <code>#tags</code> e sfogliali dalla barra laterale."],
+                    ["Ricerca globale", "Ricerca full text su tutti i documenti, ordinata per rilevanza."],
+                    ["Struttura del documento", "Naviga tra i titoli e salta subito al punto giusto."],
+                    ["Esplora file", "Sfoglia cartelle, salva posizioni, crea e rinomina file."]
+                ],
+                previewItems: [
+                    ["Rendering GFM", "Tabelle, task list, note a piè di pagina e barrato."],
+                    ["Matematica KaTeX", "Equazioni inline e a blocchi."],
+                    ["Diagrammi Mermaid", "Flowchart e sequence diagram dai blocchi di codice."],
+                    ["Blocchi di codice", "27+ linguaggi, numeri di riga, evidenziazione diff e copia in un clic."],
+                    ["Callouts", "NOTE, TIP, WARNING e oltre 15 tipi comprimibili."],
+                    ["Interattivo", "Attiva checkbox, ingrandisci immagini, passa sulle note e torna al sorgente con doppio clic."]
+                ],
+                integrationItems: [
+                    ["AI / MCP Server", "Espone il tuo vault agli agenti AI per ricerca e recupero."],
+                    ["QuickLook", "Anteprima dei file <code>.md</code> nel Finder con Spazio."],
+                    ["Esportazione PDF", "Esporta o stampa con gestione corretta delle interruzioni di pagina."],
+                    ["Formati di copia", "Markdown, HTML o testo ricco."]
+                ],
                 privacy: "Privacy",
                 language: "Lingua"
             }
@@ -506,6 +786,15 @@
             });
         }
 
+        function renderFeatureList(items) {
+            return items.map(([title, description]) => `
+                <div class="sm:flex sm:gap-2 text-sm">
+                    <dt class="font-medium text-zinc-200 sm:shrink-0">${title}</dt>
+                    <dd class="text-zinc-500"><span class="max-sm:hidden">&mdash; </span>${description}</dd>
+                </div>
+            `).join("");
+        }
+
         function setLanguage(language, persist = true) {
             const copy = TRANSLATIONS[language] || TRANSLATIONS.en;
             document.documentElement.lang = HTML_LANG[language] || "en";
@@ -524,6 +813,10 @@
             document.getElementById("section-knowledge").textContent = copy.knowledge;
             document.getElementById("section-preview").textContent = copy.preview;
             document.getElementById("section-integration").textContent = copy.integration;
+            document.getElementById("list-writing").innerHTML = renderFeatureList(copy.writingItems);
+            document.getElementById("list-knowledge").innerHTML = renderFeatureList(copy.knowledgeItems);
+            document.getElementById("list-preview").innerHTML = renderFeatureList(copy.previewItems);
+            document.getElementById("list-integration").innerHTML = renderFeatureList(copy.integrationItems);
             document.getElementById("footer-privacy").textContent = copy.privacy;
             document.getElementById("language-label").textContent = copy.language;
             document.getElementById("language-select").setAttribute("aria-label", copy.language);

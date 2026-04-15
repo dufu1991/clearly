@@ -2,9 +2,9 @@
   <img src="../website/icon.png" width="128" height="128" alt="Clearly icon" />
 </p>
 
-<h1 align="center">Clearly Markdown</h1>
+<h1 align="center">Clearly</h1>
 
-<p align="center">Ein nativer Markdown Editor und Dokumentenarbeitsbereich für macOS.</p>
+<p align="center">Markdown Editor und Wissensbasis für Mac.</p>
 
 <p align="center">
   <a href="../README.md">English</a> ·
@@ -20,36 +20,62 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">Download</a> &middot;
+  <a href="https://apps.apple.com/app/clearly-markdown/id6760669470">Mac App Store</a> &middot;
+  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">Direkter Download</a> &middot;
   <a href="https://clearly.md">Website</a> &middot;
   <a href="https://x.com/Shpigford">@Shpigford</a>
 </p>
 
 <p align="center">
-  <img src="../website/screenshot.jpg" width="720" alt="Clearly screenshot" />
+  <img src="../website/screenshots/screenshot-1.jpg" width="720" alt="Clearly — Editor mit Seitenleiste und Dokumentgliederung" />
 </p>
 
-Öffne Ordner, durchsuche deine Dateien, schreibe mit Syntaxhervorhebung und sieh dir sofort eine Vorschau an. Kein Electron, keine Abonnements und kein Ballast.
+Schreibe mit Syntaxhervorhebung, verknüpfe Gedanken mit Wiki Links, durchsuche alles und erhalte eine schöne Vorschau. Nativ für macOS, kein Electron, keine Abos.
 
 ## Funktionen
 
-- **Dateiexplorer** — Ordner öffnen, Markdown Dateien in einer Seitenleiste mit Lesezeichen und zuletzt verwendeten Orten durchsuchen
-- **Dokumentgliederung** — navigierbares Überschriftenpanel zum Springen zwischen Abschnitten（⇧⌘O）
-- **Syntaxhervorhebung** — Überschriften, Fett, Kursiv, Links, Codeblöcke, Tabellen, Fußnoten, Hervorhebungen und mehr
-- **Sofortige Vorschau** — gerendertes GitHub Flavored Markdown einschließlich Mermaid Diagrammen und KaTeX Mathematik
-- **Code Syntaxhervorhebung** — 27+ Sprachen über Highlight.js mit Zeilennummern und diff Hervorhebung
-- **Callouts und Admonitions** — `> [!NOTE]`, `> [!WARNING]` und 15 Callout Typen mit einklappbarer Unterstützung
-- **Erweitertes Markdown** — ==highlights==, ^superscript^, ~subscript~, :emoji: Kurzbefehle und `[TOC]` Generierung
-- **Interaktive Vorschau** — anklickbare Aufgaben Checkboxen, Überschriften Ankerlinks, Bild Lightbox und Fußnoten Popovers
-- **Zum Quelltext springen** — doppelklicke auf ein beliebiges Element in der Vorschau, um zur Quellzeile im Editor zu springen
-- **Frontmatter Unterstützung** — YAML Frontmatter wird sowohl im Editor als auch in der Vorschau sauber formatiert
-- **Editor / Preview Umschaltung** — zwischen Editor（⌘1）und Vorschau（⌘2）wechseln, ohne die Scrollposition zu verlieren
-- **PDF Export** — direkt aus der App nach PDF exportieren oder drucken
-- **Formatierungs Shortcuts** — ⌘B, ⌘I und ⌘K für Fett, Kursiv und Links
-- **Scratchpad** — Menubar App mit globalem Hotkey für schnelle Notizen ohne ein Dokument zu öffnen
-- **QuickLook** — `.md` Dateien direkt im Finder anzeigen
-- **Hell und dunkel** — folgt dem Systemdesign oder kann manuell eingestellt werden
-- **Mehrsprachige Oberfläche** — die Oberfläche ist in mehreren Sprachen verfügbar
+### Schreiben
+
+- **Syntaxhervorhebung** — Überschriften, Fett, Kursiv, Links, Codeblöcke und Tabellen werden beim Tippen direkt hervorgehoben
+- **Formatierungs Shortcuts** — ⌘B für Fett, ⌘I für Kursiv, ⌘K für Links
+- **Erweitertes Markdown** — `==Hervorhebungen==`, `^Hochgestellt^`, `~Tiefgestellt~`, `:emoji:` Kurzbefehle und `[TOC]`
+- **Scratchpad** — Menubar Notizzettel mit globalem Hotkey
+
+### Wissen
+
+- **Wiki Links** — Dokumente mit `[[wiki-links]]` verknüpfen, `[[` startet die Autovervollständigung
+- **Backlinks** — verlinkte und unverlinkte Erwähnungen mit einem Klick verbinden
+- **Tags** — Inhalte mit `#tags` organisieren und in der Seitenleiste durchsuchen
+- **Globale Suche** — Volltextsuche über alle Dokumente, nach Relevanz sortiert
+- **Dokumentgliederung** — navigierbare Überschriftenstruktur zum direkten Springen
+- **Dateiexplorer** — Ordner durchsuchen, Orte merken, Dateien erstellen und umbenennen
+
+### Vorschau
+
+- **GFM Rendering** — Tabellen, Aufgabenlisten, Fußnoten und Durchstreichungen
+- **KaTeX Mathematik** — Inline und Block Gleichungen
+- **Mermaid Diagramme** — Flussdiagramme und Sequenzdiagramme aus Codeblöcken
+- **Codeblöcke** — 27+ Sprachen, Zeilennummern, diff Hervorhebung und Kopieren mit einem Klick
+- **Callouts** — NOTE, TIP, WARNING und 15+ einklappbare Typen
+- **Interaktiv** — Checkboxen umschalten, Bilder zoomen, Fußnoten anzeigen, per Doppelklick zur Quelle springen
+
+### Integration
+
+- **AI / MCP Server** — integrierter MCP Server macht deinen Vault für AI Agents durchsuchbar
+- **QuickLook** — `.md` Dateien im Finder mit Space vorschauen
+- **PDF Export** — exportieren oder drucken, Seitenumbrüche inklusive
+- **Kopierformate** — Markdown, HTML oder Rich Text
+
+## Screenshots
+
+<p>
+  <img src="../website/screenshots/screenshot-2-alt.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-3.jpg" width="360" alt="" />
+</p>
+<p>
+  <img src="../website/screenshots/screenshot-4.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-5-alt.jpg" width="360" alt="" />
+</p>
 
 ## Voraussetzungen
 
@@ -159,23 +185,16 @@ Bearbeite `Clearly/Theme.swift`. Alle Farben verwenden `NSColor(name:)` mit dyna
 
 Es gibt keine automatisierte Testsuite. Prüfe manuell:
 
-1. App bauen und starten（⌘R）
+1. Build und Run（⌘R）
 2. Eine `.md` Datei öffnen und die Syntaxhervorhebung prüfen
-3. In den Vorschau Modus（⌘2）wechseln und das gerenderte Ergebnis prüfen
-4. QuickLook testen, indem du im Finder eine `.md` Datei auswählst und die Leertaste drückst
-5. Sowohl den hellen als auch den dunklen Modus prüfen
-
-## Website
-
-Die Marketing Website ist statisches HTML in `website/` und wird unter [clearly.md](https://clearly.md) bereitgestellt.
-
-- `website/index.html` — Landingpage（Versionszeichenfolge in Zeile 174）
-- `website/privacy.html` — Datenschutzrichtlinie
-- `website/appcast.xml` — Sparkle Auto Update Feed（aktualisiert durch `scripts/release.sh`）
+3. In die Vorschau wechseln（⌘2）und das Rendering prüfen
+4. Wiki Links, Backlinks, Suche und Tags testen
+5. QuickLook testen: `.md` Datei im Finder auswählen und Space drücken
+6. Hellen und dunklen Modus prüfen
 
 ## AI Agent Einrichtung
 
-Dieses Repository enthält eine `CLAUDE.md` Datei mit vollständigem Architekturkontext und Claude Code Skills in `.claude/skills/` für Release Automatisierung und Entwickler Onboarding. Wenn du Claude Code verwendest, wird das automatisch erkannt.
+Dieses Repository enthält eine `CLAUDE.md` Datei mit Architekturkontext und Claude Code Skills in `.claude/skills/` für Release Automatisierung und Entwickler Onboarding.
 
 ## Lizenz
 

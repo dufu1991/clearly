@@ -2,9 +2,9 @@
   <img src="../website/icon.png" width="128" height="128" alt="Clearly icon" />
 </p>
 
-<h1 align="center">Clearly Markdown</h1>
+<h1 align="center">Clearly</h1>
 
-<p align="center">适用于 macOS 的原生 Markdown 编辑器与文档工作区。</p>
+<p align="center">适用于 Mac 的 Markdown 编辑器与知识库。</p>
 
 <p align="center">
   <a href="../README.md">English</a> ·
@@ -20,36 +20,62 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">下载</a> &middot;
+  <a href="https://apps.apple.com/app/clearly-markdown/id6760669470">Mac App Store</a> &middot;
+  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">直接下载</a> &middot;
   <a href="https://clearly.md">网站</a> &middot;
   <a href="https://x.com/Shpigford">@Shpigford</a>
 </p>
 
 <p align="center">
-  <img src="../website/screenshot.jpg" width="720" alt="Clearly screenshot" />
+  <img src="../website/screenshots/screenshot-1.jpg" width="720" alt="Clearly —— 带有侧边栏与文档大纲的编辑器界面" />
 </p>
 
-打开文件夹、浏览文件、进行带语法高亮的写作，并即时预览。没有 Electron，没有订阅，也没有臃肿负担。
+边写边高亮，用 `wiki-links` 连接想法，搜索所有内容，并获得精美预览。原生 macOS 体验，没有 Electron，没有订阅。
 
 ## 功能特性
 
-- **文件浏览器** — 打开文件夹，在侧边栏中浏览 Markdown 文件，并支持书签位置与最近记录
-- **文档大纲** — 可导航的标题大纲面板，用于在章节之间跳转（⇧⌘O）
-- **语法高亮** — 支持标题、粗体、斜体、链接、代码块、表格、脚注、高亮等
-- **即时预览** — 渲染 GitHub Flavored Markdown，包括 Mermaid 图表与 KaTeX 数学公式
-- **代码语法高亮** — 通过 Highlight.js 支持 27+ 种语言，并带有行号与 diff 高亮
-- **Callout 与 Admonition** — 支持 `> [!NOTE]`、`> [!WARNING]` 以及 15 种带折叠能力的提示块
-- **扩展 Markdown** — 支持 ==highlights==、^superscript^、~subscript~、:emoji: 短代码与 `[TOC]` 生成
-- **交互式预览** — 支持可点击的任务复选框、标题锚点链接、图片灯箱与脚注弹出层
-- **点击回到源码** — 在预览中双击任意元素，即可跳到编辑器中的源码行
-- **Frontmatter 支持** — YAML Frontmatter 会在编辑器与预览中以整洁的方式呈现
-- **编辑器 / 预览切换** — 在编辑器（⌘1）与预览（⌘2）之间切换，并保留滚动位置
-- **PDF 导出** — 可直接从应用中导出 PDF 或打印
-- **格式快捷键** — 支持 ⌘B、⌘I、⌘K 进行加粗、斜体和插入链接
-- **Scratchpad** — 菜单栏应用，带有全局快捷键，可在不打开文档时快速记录笔记
-- **QuickLook** — 可直接在 Finder 中预览 `.md` 文件
-- **浅色与深色** — 跟随系统外观，或手动设置
-- **多语言界面** — 界面支持多种语言
+### 写作
+
+- **语法高亮** — 标题、粗体、斜体、链接、代码块、表格都会在输入时即时高亮
+- **格式快捷键** — ⌘B 加粗，⌘I 斜体，⌘K 插入链接
+- **扩展 Markdown** — 支持 `==高亮==`、`^上标^`、`~下标~`、`:emoji:` 短代码与 `[TOC]` 目录生成
+- **Scratchpad** — 带全局快捷键的菜单栏速记板
+
+### 知识管理
+
+- **Wiki 链接** — 使用 `[[wiki-links]]` 连接文档，输入 `[[` 即可自动补全
+- **反向链接** — 已链接与未链接提及都可一键关联
+- **标签** — 使用 `#tags` 组织内容，并在侧边栏浏览
+- **全局搜索** — 基于相关性的全文搜索，覆盖全部文档
+- **文档大纲** — 可导航的标题大纲，点击即可跳转
+- **文件浏览器** — 浏览文件夹、收藏位置、创建并重命名文件
+
+### 预览
+
+- **GFM 渲染** — 支持表格、任务列表、脚注与删除线
+- **KaTeX 数学公式** — 支持行内与块级公式
+- **Mermaid 图表** — 从代码块渲染流程图与时序图
+- **代码块** — 支持 27+ 种语言、行号、diff 高亮与一键复制
+- **Callout** — 支持 NOTE、TIP、WARNING 等 15+ 种可折叠类型
+- **交互式预览** — 可切换复选框、缩放图片、悬停脚注，并双击跳回源码
+
+### 集成
+
+- **AI / MCP 服务器** — 内置 `MCP server`，可将知识库暴露给 `AI agent` 做搜索与检索
+- **QuickLook** — 在 Finder 中按空格预览 `.md` 文件
+- **PDF 导出** — 支持导出或打印，并正确处理分页
+- **复制格式** — 支持复制 Markdown、HTML 或富文本
+
+## 截图
+
+<p>
+  <img src="../website/screenshots/screenshot-2-alt.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-3.jpg" width="360" alt="" />
+</p>
+<p>
+  <img src="../website/screenshots/screenshot-4.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-5-alt.jpg" width="360" alt="" />
+</p>
 
 ## 环境要求
 
@@ -162,20 +188,13 @@ ExportOptions.plist      # 发布构建的 Developer ID 导出配置
 1. 构建并运行应用（⌘R）
 2. 打开一个 `.md` 文件，并确认语法高亮正常
 3. 切换到预览模式（⌘2），并确认渲染结果正确
-4. 在 Finder 中选中一个 `.md` 文件并按空格，测试 QuickLook
-5. 检查浅色模式与深色模式
-
-## 网站
-
-营销站点是位于 `website/` 中的静态 HTML，部署在 [clearly.md](https://clearly.md)。
-
-- `website/index.html` — 落地页（版本字符串位于第 174 行）
-- `website/privacy.html` — 隐私政策
-- `website/appcast.xml` — Sparkle 自动更新源（由 `scripts/release.sh` 更新）
+4. 测试 `wiki-links`、反向链接、搜索与标签
+5. 在 Finder 中选中一个 `.md` 文件并按空格，测试 QuickLook
+6. 检查浅色模式与深色模式
 
 ## AI Agent 设置
 
-这个仓库包含一个 `CLAUDE.md` 文件，里面提供完整的架构背景，以及位于 `.claude/skills/` 中供 Claude Code 使用的发布自动化与开发入门技能。如果你正在使用 Claude Code，这些内容会被自动识别。
+这个仓库包含一个 `CLAUDE.md` 文件，里面提供架构背景，以及位于 `.claude/skills/` 中供 Claude Code 使用的发布自动化与开发入门技能。
 
 ## 许可证
 

@@ -2,9 +2,9 @@
   <img src="../website/icon.png" width="128" height="128" alt="Clearly icon" />
 </p>
 
-<h1 align="center">Clearly Markdown</h1>
+<h1 align="center">Clearly</h1>
 
-<p align="center">macOS 向けのネイティブな Markdown エディタ兼ドキュメントワークスペースです。</p>
+<p align="center">Mac 向けの Markdown エディタ兼ナレッジベースです。</p>
 
 <p align="center">
   <a href="../README.md">English</a> ·
@@ -20,36 +20,62 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">ダウンロード</a> &middot;
+  <a href="https://apps.apple.com/app/clearly-markdown/id6760669470">Mac App Store</a> &middot;
+  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">直接ダウンロード</a> &middot;
   <a href="https://clearly.md">Web サイト</a> &middot;
   <a href="https://x.com/Shpigford">@Shpigford</a>
 </p>
 
 <p align="center">
-  <img src="../website/screenshot.jpg" width="720" alt="Clearly screenshot" />
+  <img src="../website/screenshots/screenshot-1.jpg" width="720" alt="Clearly — サイドバーとドキュメントアウトラインを備えたエディタ" />
 </p>
 
-フォルダを開き、ファイルを参照し、シンタックスハイライト付きで書き、すぐにプレビューできます。Electron も、サブスクリプションも、肥大化もありません。
+シンタックスハイライト付きで書き、wiki links で考えをつなぎ、すべてを検索し、美しくプレビューできます。ネイティブな macOS アプリで、Electron もサブスクリプションもありません。
 
 ## 機能
 
-- **ファイルエクスプローラ** — フォルダを開き、ブックマークした場所や最近使った項目とともに、サイドバーで Markdown ファイルを参照
-- **ドキュメントアウトライン** — セクション間を移動するための、見出しベースのナビゲーション可能なアウトラインパネル（⇧⌘O）
-- **シンタックスハイライト** — 見出し、太字、斜体、リンク、コードブロック、表、脚注、ハイライトなどをサポート
-- **即時プレビュー** — Mermaid 図や KaTeX 数式を含む GitHub Flavored Markdown をレンダリング
-- **コードのシンタックスハイライト** — Highlight.js により 27+ 言語をサポートし、行番号と diff ハイライトを表示
-- **コールアウトとアドモニション** — `> [!NOTE]`、`> [!WARNING]`、および折りたたみ対応の 15 種類のコールアウトをサポート
-- **拡張 Markdown** — ==highlights==、^superscript^、~subscript~、:emoji: ショートコード、`[TOC]` 生成をサポート
-- **インタラクティブプレビュー** — クリック可能なタスクチェックボックス、見出しアンカーリンク、画像ライトボックス、脚注ポップオーバーをサポート
-- **ソースへのジャンプ** — プレビュー内の任意の要素をダブルクリックすると、エディタ内の対応するソース行へ移動
-- **Frontmatter サポート** — YAML Frontmatter をエディタとプレビューの両方で整然と表示
-- **エディタ / プレビュー切り替え** — エディタ（⌘1）とプレビュー（⌘2）を切り替えても、スクロール位置を保持
-- **PDF 書き出し** — アプリから直接 PDF に書き出し、または印刷可能
-- **書式ショートカット** — 太字、斜体、リンクのために ⌘B、⌘I、⌘K を使用
-- **Scratchpad** — ドキュメントを開かずにクイックメモを取るための、グローバルホットキー付きメニューバーアプリ
-- **QuickLook** — Finder 内で `.md` ファイルをそのままプレビュー
-- **ライト / ダーク** — システムの外観に追従、または手動で設定可能
-- **多言語 UI** — インターフェースは複数の言語に対応
+### Writing
+
+- **シンタックスハイライト** — 見出し、太字、斜体、リンク、コードブロック、表を入力中にそのまま強調表示
+- **書式ショートカット** — ⌘B で太字、⌘I で斜体、⌘K でリンク
+- **拡張 Markdown** — `==ハイライト==`、`^上付き^`、`~下付き~`、`:emoji:`、`[TOC]`
+- **Scratchpad** — グローバルホットキー付きのメニューバー用メモ
+
+### Knowledge
+
+- **Wiki links** — `[[wiki-links]]` で文書を接続。`[[` でオートコンプリート
+- **Backlinks** — リンク済みと未リンクの参照をワンクリックで接続
+- **Tags** — `#tags` で整理し、サイドバーから参照
+- **グローバル検索** — すべての文書を対象にした関連度順の全文検索
+- **ドキュメントアウトライン** — 見出しベースのナビゲーション構造
+- **ファイルエクスプローラ** — フォルダ参照、場所の固定、ファイル作成とリネーム
+
+### Preview
+
+- **GFM レンダリング** — 表、タスクリスト、脚注、打ち消し線
+- **KaTeX 数式** — インライン数式とブロック数式
+- **Mermaid 図** — コードブロックからフローチャートとシーケンス図を描画
+- **コードブロック** — 27+ 言語、行番号、diff ハイライト、ワンクリックコピー
+- **Callouts** — NOTE、TIP、WARNING など 15+ 種類を折りたたみ可能
+- **インタラクティブ** — チェックボックス切り替え、画像ズーム、脚注ホバー、ダブルクリックでソースへ移動
+
+### Integration
+
+- **AI / MCP Server** — 内蔵 MCP Server が vault を AI Agents 向けの検索対象として公開
+- **QuickLook** — Finder で `.md` ファイルを Space ですばやく確認
+- **PDF 書き出し** — ページ区切り込みで書き出しまたは印刷
+- **コピー形式** — Markdown、HTML、リッチテキスト
+
+## スクリーンショット
+
+<p>
+  <img src="../website/screenshots/screenshot-2-alt.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-3.jpg" width="360" alt="" />
+</p>
+<p>
+  <img src="../website/screenshots/screenshot-4.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-5-alt.jpg" width="360" alt="" />
+</p>
 
 ## 前提条件
 
@@ -162,20 +188,13 @@ ExportOptions.plist      # リリースビルド用 Developer ID 書き出し設
 1. アプリをビルドして実行する（⌘R）
 2. `.md` ファイルを開き、シンタックスハイライトを確認する
 3. プレビューモード（⌘2）へ切り替え、レンダリング結果を確認する
-4. Finder で `.md` ファイルを選択して Space を押し、QuickLook を試す
-5. ライトモードとダークモードの両方を確認する
-
-## Web サイト
-
-マーケティングサイトは `website/` 内の静的 HTML で、[clearly.md](https://clearly.md) に公開されています。
-
-- `website/index.html` — ランディングページ（バージョン文字列は 174 行目）
-- `website/privacy.html` — プライバシーポリシー
-- `website/appcast.xml` — Sparkle 自動更新フィード（`scripts/release.sh` により更新）
+4. wiki links、backlinks、検索、tags を確認する
+5. Finder で `.md` ファイルを選択して Space を押し、QuickLook を試す
+6. ライトモードとダークモードの両方を確認する
 
 ## AI Agent セットアップ
 
-このリポジトリには、完全なアーキテクチャ情報を含む `CLAUDE.md` と、リリース自動化や開発オンボーディング用の Claude Code スキルが `.claude/skills/` に含まれています。Claude Code を使っている場合、これらは自動的に認識されます。
+このリポジトリには、アーキテクチャ情報を含む `CLAUDE.md` と、リリース自動化や開発オンボーディング用の Claude Code スキルが `.claude/skills/` に含まれています。
 
 ## ライセンス
 

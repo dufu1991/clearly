@@ -2,9 +2,9 @@
   <img src="../website/icon.png" width="128" height="128" alt="Clearly icon" />
 </p>
 
-<h1 align="center">Clearly Markdown</h1>
+<h1 align="center">Clearly</h1>
 
-<p align="center">Un editor nativo de Markdown y un espacio de trabajo documental para macOS.</p>
+<p align="center">Editor Markdown y base de conocimiento para Mac.</p>
 
 <p align="center">
   <a href="../README.md">English</a> ·
@@ -20,36 +20,62 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">Descargar</a> &middot;
+  <a href="https://apps.apple.com/app/clearly-markdown/id6760669470">Mac App Store</a> &middot;
+  <a href="https://github.com/Shpigford/clearly/releases/latest/download/Clearly.dmg">Descarga directa</a> &middot;
   <a href="https://clearly.md">Sitio web</a> &middot;
   <a href="https://x.com/Shpigford">@Shpigford</a>
 </p>
 
 <p align="center">
-  <img src="../website/screenshot.jpg" width="720" alt="Clearly screenshot" />
+  <img src="../website/screenshots/screenshot-1.jpg" width="720" alt="Clearly — editor con barra lateral y esquema del documento" />
 </p>
 
-Abre carpetas, explora tus archivos, escribe con resaltado de sintaxis y obtén vista previa al instante. Sin Electron, sin suscripciones y sin bloat.
+Escribe con resaltado de sintaxis, enlaza ideas con wiki links, busca en todo y disfruta de una vista previa cuidada. Nativo para macOS, sin Electron y sin suscripciones.
 
 ## Funciones
 
-- **Explorador de archivos** — abre carpetas, navega archivos Markdown en una barra lateral con ubicaciones marcadas y recientes
-- **Esquema del documento** — panel de esquema de encabezados navegable para saltar entre secciones（⇧⌘O）
-- **Resaltado de sintaxis** — encabezados, negrita, cursiva, enlaces, bloques de código, tablas, notas al pie, resaltados y más
-- **Vista previa instantánea** — Markdown estilo GitHub renderizado, incluidos diagramas Mermaid y matemáticas con KaTeX
-- **Resaltado de sintaxis para código** — 27+ lenguajes mediante Highlight.js con números de línea y resaltado diff
-- **Callouts y admonitions** — `> [!NOTE]`, `> [!WARNING]` y 15 tipos de callout con soporte de plegado
-- **Markdown extendido** — ==highlights==, ^superscript^, ~subscript~, atajos :emoji: y generación de `[TOC]`
-- **Vista previa interactiva** — casillas de tareas clicables, enlaces ancla de encabezados, lightbox de imágenes y popovers de notas al pie
-- **Ir al origen** — haz doble clic en cualquier elemento de la vista previa para saltar a su línea fuente en el editor
-- **Compatibilidad con Frontmatter** — el YAML Frontmatter se formatea limpiamente tanto en el editor como en la vista previa
-- **Alternar Editor / Preview** — cambia entre editor（⌘1）y vista previa（⌘2）con la posición de desplazamiento preservada
-- **Exportación a PDF** — exporta a PDF o imprime directamente desde la app
-- **Atajos de formato** — ⌘B, ⌘I y ⌘K para negrita, cursiva y enlaces
-- **Scratchpad** — app de barra de menús con un atajo global para capturar notas rápidas sin abrir un documento
-- **QuickLook** — previsualiza archivos `.md` directamente en Finder
-- **Claro y oscuro** — sigue la apariencia del sistema o se puede configurar manualmente
-- **Interfaz multilingüe** — la interfaz está disponible en varios idiomas
+### Escritura
+
+- **Resaltado de sintaxis** — encabezados, negrita, cursiva, enlaces, bloques de código y tablas resaltados mientras escribes
+- **Atajos de formato** — ⌘B negrita, ⌘I cursiva, ⌘K enlaces
+- **Markdown extendido** — `==resaltados==`, `^superíndice^`, `~subíndice~`, atajos `:emoji:` y `[TOC]`
+- **Scratchpad** — bloc de notas en la barra de menús con atajo global
+
+### Conocimiento
+
+- **Wiki links** — enlaza documentos con `[[wiki-links]]`; escribe `[[` para autocompletar
+- **Backlinks** — menciones enlazadas y no enlazadas con vinculación en un clic
+- **Tags** — organiza con `#tags` y recórrelos desde la barra lateral
+- **Búsqueda global** — búsqueda de texto completo en todos los documentos, ordenada por relevancia
+- **Esquema del documento** — estructura navegable de encabezados, con salto inmediato
+- **Explorador de archivos** — navega carpetas, fija ubicaciones, crea y renombra archivos
+
+### Vista previa
+
+- **Renderizado GFM** — tablas, listas de tareas, notas al pie y tachado
+- **Matemáticas KaTeX** — ecuaciones inline y de bloque
+- **Diagramas Mermaid** — diagramas de flujo y secuencia desde bloques de código
+- **Bloques de código** — 27+ lenguajes, números de línea, resaltado diff y copia en un clic
+- **Callouts** — NOTE, TIP, WARNING y más de 15 tipos plegables
+- **Interactivo** — alterna casillas, amplía imágenes, pasa sobre notas al pie y vuelve al origen con doble clic
+
+### Integración
+
+- **Servidor AI / MCP** — el servidor MCP integrado expone tu vault a agentes de AI para búsqueda y recuperación
+- **QuickLook** — previsualiza archivos `.md` en Finder con Espacio
+- **Exportación PDF** — exporta o imprime con saltos de página resueltos
+- **Formatos de copia** — Markdown, HTML o texto enriquecido
+
+## Capturas
+
+<p>
+  <img src="../website/screenshots/screenshot-2-alt.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-3.jpg" width="360" alt="" />
+</p>
+<p>
+  <img src="../website/screenshots/screenshot-4.jpg" width="360" alt="" />
+  <img src="../website/screenshots/screenshot-5-alt.jpg" width="360" alt="" />
+</p>
 
 ## Requisitos previos
 
@@ -162,20 +188,13 @@ No hay una suite de pruebas automatizada. Valida manualmente:
 1. Compila y ejecuta la app（⌘R）
 2. Abre un archivo `.md` y verifica el resaltado de sintaxis
 3. Cambia al modo de vista previa（⌘2）y verifica el resultado renderizado
-4. Prueba QuickLook seleccionando un archivo `.md` en Finder y pulsando Espacio
-5. Comprueba tanto el modo claro como el oscuro
-
-## Sitio web
-
-El sitio de marketing es HTML estático dentro de `website/`, desplegado en [clearly.md](https://clearly.md).
-
-- `website/index.html` — página de inicio（la cadena de versión está en la línea 174）
-- `website/privacy.html` — política de privacidad
-- `website/appcast.xml` — feed de actualizaciones automáticas de Sparkle（actualizado por `scripts/release.sh`）
+4. Prueba wiki links, backlinks, búsqueda y tags
+5. Prueba QuickLook seleccionando un archivo `.md` en Finder y pulsando Espacio
+6. Comprueba tanto el modo claro como el oscuro
 
 ## Configuración de AI Agent
 
-Este repositorio incluye un archivo `CLAUDE.md` con contexto completo de la arquitectura y habilidades de Claude Code en `.claude/skills/` para automatización de lanzamientos e incorporación de desarrollo. Si estás usando Claude Code, esto se detecta automáticamente.
+Este repositorio incluye un archivo `CLAUDE.md` con contexto de arquitectura y habilidades de Claude Code en `.claude/skills/` para automatización de lanzamientos e incorporación de desarrollo.
 
 ## Licencia
 
